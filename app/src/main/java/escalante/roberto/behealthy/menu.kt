@@ -14,13 +14,6 @@ class menu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        salud.text = getString(R.string.salud)
-        salud.typeface = Typeface.createFromAsset(assets, "fonts/modern.otf")
-
-
-
-
-
 
     }
 

@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">BeHealthy</string>
     <string name="salud">Salud</string>
+    <string name="hoy">Hoy</string>
+    <string name="medicamentos">Medicamentos</string>
+    <string name="alerta">Alerta</string>
+    <string name="dieta">Dieta</string>
+    <string name="azucar">Azucar</string>
+    <string name="plan">Plan</string>
+    <string name="ejercicio">Ejercicio</string>
+    <string name="tuMeta">Tu meta</string>
 
 </resources>
