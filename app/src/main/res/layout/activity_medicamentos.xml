@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Medicamentos"
+>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fondoAzul"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/redrock"
+            android:text="Medicamentos"
+            android:textColor="@color/blanco"
+            android:textSize="50sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Lunes"
+            android:textColor="@color/blanco"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp"
+        />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/monito_blanco"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Muy buen desempeño"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/blanco">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Sigue asi!"
+            android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:textColor="@color/fondoAzul"
+
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No olvides tomar tu medicamento"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:textColor="@color/fondoAzul"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Metformina tableta 850 mg y pioglitazona 15mg"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:textColor="@color/fondoAzul"
+        />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/gymed"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+        />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
