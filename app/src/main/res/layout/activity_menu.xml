@@ -22,23 +22,25 @@
 
     <!-- Menú -->
 
-    <LinearLayout
+
+
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:layout_gravity="center"
+        android:columnCount="3">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hoy"
-            android:textColor="@color/blanco"
-            android:textSize="20dp"
-            android:paddingHorizontal="40dp">
-        </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hoy"
+                android:textColor="@color/blanco"
+                android:textSize="20dp"
+                android:paddingHorizontal="40dp">
+            </TextView>
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="6dp"
@@ -46,15 +48,21 @@
                 android:background="@drawable/linea"
                 ></ImageView>
         </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/medicamentos"
+    android:textColor="@color/gris"
+    android:gravity="center"
+    android:textSize="20dp"></TextView>
+</LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/medicamentos"
-            android:textColor="@color/gris"
-            android:paddingHorizontal="5dp"
-            android:textSize="20dp"></TextView>
-
+<LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,8 +70,8 @@
             android:textColor="@color/gris"
             android:paddingHorizontal="20dp"
             android:textSize="20dp"></TextView>
-    </LinearLayout>
-
+</LinearLayout>
+    </GridLayout>
 
 
     <!-- Porcentaje -->
@@ -121,23 +129,23 @@
 
     <!-- Opciones -->
 
-
-    <LinearLayout
-        android:layout_marginTop="35dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+    <GridLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="2"
+        android:useDefaultMargins="true"
+        android:paddingHorizontal="25dp">
         <LinearLayout
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="@dimen/botones_menu"
+            android:layout_height="@dimen/botones_menu"
             android:orientation="vertical"
-            android:layout_marginHorizontal="60dp"
             android:background="@drawable/marco">
             <ImageView
                 android:layout_marginTop="10dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/imagenes"
+                android:layout_height="@dimen/imagenes"
                 android:layout_gravity="center"
                 android:src="@drawable/dieta">
             </ImageView>
@@ -147,18 +155,17 @@
                 android:text="@string/dieta"
                 android:textColor="@color/fondoAzul"
                 android:gravity="center"
-                android:textSize="18dp"></TextView>
+                android:textSize="@dimen/letra_menu"></TextView>
         </LinearLayout>
-
         <LinearLayout
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="@dimen/botones_menu"
+            android:layout_height="@dimen/botones_menu"
             android:orientation="vertical"
             android:background="@drawable/marco">
             <ImageView
                 android:layout_marginTop="10dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/imagenes"
+                android:layout_height="@dimen/imagenes"
                 android:layout_gravity="center"
                 android:src="@drawable/azucar">
             </ImageView>
@@ -168,27 +175,17 @@
                 android:text="@string/glucosa"
                 android:textColor="@color/fondoAzul"
                 android:gravity="center"
-                android:textSize="18dp"></TextView>
+                android:textSize="@dimen/letra_menu"></TextView>
         </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
         <LinearLayout
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="@dimen/botones_menu"
+            android:layout_height="@dimen/botones_menu"
             android:orientation="vertical"
-            android:layout_marginHorizontal="60dp"
             android:background="@drawable/marco">
             <ImageView
                 android:layout_marginTop="10dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/imagenes"
+                android:layout_height="@dimen/imagenes"
                 android:layout_gravity="center"
                 android:src="@drawable/plan">
             </ImageView>
@@ -198,18 +195,17 @@
                 android:text="@string/plan"
                 android:textColor="@color/fondoAzul"
                 android:gravity="center"
-                android:textSize="18dp"></TextView>
+                android:textSize="@dimen/letra_menu"></TextView>
         </LinearLayout>
-
         <LinearLayout
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="@dimen/botones_menu"
+            android:layout_height="@dimen/botones_menu"
             android:orientation="vertical"
             android:background="@drawable/marco">
             <ImageView
                 android:layout_marginTop="10dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/imagenes"
+                android:layout_height="@dimen/imagenes"
                 android:layout_gravity="center"
                 android:src="@drawable/ejercicio">
             </ImageView>
@@ -219,10 +215,11 @@
                 android:text="@string/ejercicio"
                 android:textColor="@color/fondoAzul"
                 android:gravity="center"
-                android:textSize="18dp"></TextView>
+                android:textSize="@dimen/letra_menu"></TextView>
         </LinearLayout>
+    </GridLayout>
 
-    </LinearLayout>
+
 
 
 
