@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondoAzul"
+    android:orientation="vertical"
+    tools:context=".menu">
+
+    <TextView
+        android:id="@+id/salud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/salud"
+        android:textColor="@color/blanco"
+        android:textSize="50dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/redrock"
+        android:textAlignment="center">
+    </TextView>
+
+
+    <!-- Menú -->
+
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="3">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hoy"
+                android:textColor="@color/blanco"
+                android:textSize="20dp"
+                android:paddingHorizontal="40dp">
+            </TextView>
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="6dp"
+                android:layout_gravity="center"
+                android:background="@drawable/linea"
+                ></ImageView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/medicamentos"
+                android:textColor="@color/gris"
+                android:gravity="center"
+                android:textSize="20dp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alerta"
+                android:textColor="@color/gris"
+                android:paddingHorizontal="20dp"
+                android:textSize="20dp"></TextView>
+        </LinearLayout>
+    </GridLayout>
+
+
+    <!-- Porcentaje -->
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/circle">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tuMeta"
+            android:textSize="25dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+        </TextView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center">
+            <TextView
+                android:paddingLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="75"
+                android:textSize="50dp"
+                android:textStyle="normal"></TextView>
+            <TextView
+                android:layout_marginHorizontal="8dp"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="%"></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hoy"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/verde"
+            ></TextView>
+    </LinearLayout>
+
+
+
+
+    <!-- Opciones -->
+
+    <GridLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="2"
+        android:useDefaultMargins="true"
+        android:paddingHorizontal="25dp">
+        <LinearLayout
+            android:layout_width="@dimen/botones_menu"
+            android:layout_height="@dimen/botones_menu"
+            android:orientation="vertical"
+            android:background="@drawable/marco">
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="@dimen/imagenes"
+                android:layout_height="@dimen/imagenes"
+                android:layout_gravity="center"
+                android:src="@drawable/dieta">
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dieta"
+                android:textColor="@color/fondoAzul"
+                android:gravity="center"
+                android:textSize="@dimen/letra_menu"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="@dimen/botones_menu"
+            android:layout_height="@dimen/botones_menu"
+            android:orientation="vertical"
+            android:background="@drawable/marco">
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="@dimen/imagenes"
+                android:layout_height="@dimen/imagenes"
+                android:layout_gravity="center"
+                android:src="@drawable/azucar">
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/glucosa"
+                android:textColor="@color/fondoAzul"
+                android:gravity="center"
+                android:textSize="@dimen/letra_menu"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="@dimen/botones_menu"
+            android:layout_height="@dimen/botones_menu"
+            android:orientation="vertical"
+            android:background="@drawable/marco">
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="@dimen/imagenes"
+                android:layout_height="@dimen/imagenes"
+                android:layout_gravity="center"
+                android:src="@drawable/plan">
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/plan"
+                android:textColor="@color/fondoAzul"
+                android:gravity="center"
+                android:textSize="@dimen/letra_menu"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="@dimen/botones_menu"
+            android:layout_height="@dimen/botones_menu"
+            android:orientation="vertical"
+            android:background="@drawable/marco">
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="@dimen/imagenes"
+                android:layout_height="@dimen/imagenes"
+                android:layout_gravity="center"
+                android:src="@drawable/ejercicio">
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ejercicio"
+                android:textColor="@color/fondoAzul"
+                android:gravity="center"
+                android:textSize="@dimen/letra_menu"></TextView>
+        </LinearLayout>
+    </GridLayout>
+
+
+</LinearLayout>

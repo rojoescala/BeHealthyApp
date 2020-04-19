@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="botones_menu">120dp</dimen>
+    <dimen name="imagenes">60dp</dimen>
+    <dimen name="letra_menu">22dp</dimen>
+</resources>
