@@ -13,4 +13,10 @@
     <string name="tuMeta">Tu meta</string>
     <string name="glucosa">Glucosa</string>
     <string name="lunes">LUNES</string>
+    <string name="descripcion_rutina">Tu rutina el día de hoy es cardio y gluteo! sigue las instrucciones a continuación</string>
+    <string name="rutina1">Comenzar con 35 min de cardio</string>
+    <string name="rutina2">3 series de elevación de pierna</string>
+    <string name="rutina3">4 series de 15 sentadillas cada una</string>
+    <string name="rutina4">3 series de 5 saltos de rana</string>
+    <string name="terminado">Terminada</string>
 </resources>
