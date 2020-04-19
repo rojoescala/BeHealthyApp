@@ -3,4 +3,6 @@
     <dimen name="botones_menu">120dp</dimen>
     <dimen name="imagenes">60dp</dimen>
     <dimen name="letra_menu">22dp</dimen>
+    <dimen name="letra_rutina_numero">40dp</dimen>
+    <dimen name="letra_descripcion_rutina">18dp</dimen>
 </resources>

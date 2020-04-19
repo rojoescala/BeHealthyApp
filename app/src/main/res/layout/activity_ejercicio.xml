@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondoAzul"
+    tools:context=".ejercicio">
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ejercicio"
+                android:textColor="@color/blanco"
+                android:textSize="50dp"
+                android:fontFamily="@font/redrock"
+                android:layout_gravity="center"></TextView>
+        </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lunes"
+        android:gravity="center"
+        android:textColor="@color/blanco"
+        android:textSize="18dp">
+
+    </TextView>
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/rutina"
+        ></ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/descripcion_rutina"
+        android:textAlignment="center"
+        android:textColor="@color/blanco"
+        android:textSize="18dp"
+        android:paddingHorizontal="30dp"
+        android:paddingBottom="20dp">
+    </TextView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/letra_rutina_numero"
+            android:textColor="@color/blanco"
+            android:layout_marginRight="15dp"
+            android:text="01"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/rutina1"
+                android:gravity="center"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/letra_descripcion_rutina"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/letra_rutina_numero"
+            android:textColor="@color/blanco"
+            android:layout_marginRight="15dp"
+            android:text="02"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/rutina2"
+                android:gravity="center"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/letra_descripcion_rutina"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/letra_rutina_numero"
+            android:textColor="@color/blanco"
+            android:layout_marginRight="15dp"
+            android:text="03"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/rutina3"
+                android:gravity="center"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/letra_descripcion_rutina"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/letra_rutina_numero"
+            android:textColor="@color/blanco"
+            android:layout_marginRight="15dp"
+            android:text="04"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/rutina4"
+                android:gravity="center"
+                android:textColor="@color/blanco"
+                android:textSize="@dimen/letra_descripcion_rutina"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="@string/terminado"
+        android:textSize="20dp"
+        android:background="@drawable/button_ejercicio"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+    </Button>
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
