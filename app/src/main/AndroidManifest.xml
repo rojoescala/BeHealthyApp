@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ejercicio"></activity>
+        <activity android:name=".dieta"></activity>
+        <activity android:name=".ejercicio" />
         <activity android:name=".menu" />
         <activity android:name=".Medicamentos" />
         <activity android:name=".sign_in" />
