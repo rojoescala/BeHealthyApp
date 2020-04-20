@@ -1,6 +1,7 @@
 <<<<<<< Original<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
 package="escalante.roberto.behealthy">
 
+<<<<<<< HEAD
 <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -15,6 +16,23 @@ package="escalante.roberto.behealthy">
     <
     <
     < HEAD
+=======
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".dieta"></activity>
+        <activity android:name=".ejercicio" />
+        <activity android:name=".menu" />
+        <activity android:name=".Medicamentos" />
+        <activity android:name=".sign_in" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+>>>>>>> Roberto
 
     <activity android:name=".plan2"></activity>
     <activity android:name=".plan" />
