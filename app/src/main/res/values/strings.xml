@@ -30,7 +30,16 @@
     <string name="cena_2">VERDURA 200 g, TORTILLA, ARROZ 80 g, FRUTA 1 PIEZA</string>
     <string name="recena_2">1/2 VASO DE LECHE ALEMNDRA</string>
     <string name="descripcion_dieta">Comienza la semana con este delicioso plan nutritivo</string>
-
+    <string name="dias">Días</string>
+    <string name="dia1">Lunes</string>
+    <string name="dia2">Martes</string>
+    <string name="dia3">Miercoles</string>
+    <string name="dia4">Jueves</string>
+    <string name="dia5">Viernes</string>
+    <string name="dia6">Sabado</string>
+    <string name="dia7">Domingo</string>
+    <string name="hora">Hora</string>
+    <string name="agregar">Agregar</string>
 
 
 </resources>
