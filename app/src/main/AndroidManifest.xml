@@ -9,13 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ejercicio" />
-        <activity android:name=".menu" />
+        <activity android:name=".Ejercicio" />
+        <activity android:name=".Menu" />
         <activity android:name=".Medicamentos" />
-        <activity android:name=".sign_in" />
-        <activity android:name=".agregarMedicamente" />
-        <activity android:name=".dieta" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".AgregarMedicamente" />
+        <activity android:name=".Dieta" />
+            <activity android:name=".Sign_in" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

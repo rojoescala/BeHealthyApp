@@ -3,10 +3,10 @@ package escalante.roberto.behealthy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class menu : AppCompatActivity() {
+class Dieta : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        setContentView(R.layout.activity_dieta)
     }
 }

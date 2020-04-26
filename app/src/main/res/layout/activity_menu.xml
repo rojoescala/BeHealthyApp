@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/fondoAzul"
     android:orientation="vertical"
-    tools:context=".menu">
+    tools:context=".Menu">
 
     <TextView
         android:id="@+id/salud"
@@ -53,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/medicamentos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/medicamentos"

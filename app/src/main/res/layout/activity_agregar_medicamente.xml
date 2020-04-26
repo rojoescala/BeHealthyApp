@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/fondoAzul"
-    tools:context=".agregarMedicamente">
+    tools:context=".AgregarMedicamente">
 
     <TextView
         android:gravity="center"
