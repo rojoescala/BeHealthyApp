@@ -53,11 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
-<<<<<<< HEAD
-                android:id="@+id/medicamentos"
-=======
                 android:id="@+id/btn_medicamentos"
->>>>>>> master
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/medicamentos"
@@ -70,6 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content">
             <TextView
+                android:id="@+id/btn_alerta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/alerta"
@@ -144,6 +141,7 @@
         android:useDefaultMargins="true"
         android:paddingHorizontal="25dp">
         <LinearLayout
+            android:id="@+id/btn_dieta"
             android:layout_width="@dimen/botones_menu"
             android:layout_height="@dimen/botones_menu"
             android:orientation="vertical"
@@ -164,6 +162,7 @@
                 android:textSize="@dimen/letra_menu"></TextView>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_glucosa"
             android:layout_width="@dimen/botones_menu"
             android:layout_height="@dimen/botones_menu"
             android:orientation="vertical"
@@ -184,6 +183,7 @@
                 android:textSize="@dimen/letra_menu"></TextView>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_plan"
             android:layout_width="@dimen/botones_menu"
             android:layout_height="@dimen/botones_menu"
             android:orientation="vertical"
@@ -204,6 +204,7 @@
                 android:textSize="@dimen/letra_menu"></TextView>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_ejercicio"
             android:layout_width="@dimen/botones_menu"
             android:layout_height="@dimen/botones_menu"
             android:orientation="vertical"

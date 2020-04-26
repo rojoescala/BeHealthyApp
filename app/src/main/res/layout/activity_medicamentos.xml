@@ -5,14 +5,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Medicamentos"
->
+    tools:context=".Medicamentos">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/fondoAzul"
         android:orientation="vertical">
+
+        <!--
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_chevron_left_black_24dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/redrock"
+                android:text="Medicamentos"
+                android:textColor="@color/blanco"
+                android:textSize="50sp"/>
+
+
+        </LinearLayout> -->
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_chevron_left_black_24dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,6 +51,7 @@
             android:text="Medicamentos"
             android:textColor="@color/blanco"
             android:textSize="50sp"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
