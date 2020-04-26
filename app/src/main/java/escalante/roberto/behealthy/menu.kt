@@ -12,7 +12,7 @@ class Menu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-
+        // No se si es necesario hacer muchos itentos
         var intent = Intent(this, Medicamentos::class.java)
         var intent2 = Intent(this, Alerta::class.java)
         var intent3 = Intent(this, Dieta::class.java)

@@ -11,20 +11,30 @@
 
 
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ejercicio"
-                android:textColor="@color/blanco"
-                android:textSize="50dp"
-                android:fontFamily="@font/redrock"
-                android:layout_gravity="center"></TextView>
-        </LinearLayout>
+
+    <ImageView
+        android:id="@+id/atras"
+        android:layout_marginTop="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_chevron_left_black_24dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/ejercicio"
+        android:textColor="@color/blanco"
+        android:textSize="50sp"
+        android:fontFamily="@font/redrock"></TextView>
+</RelativeLayout>
+
+
+
 
 
     <TextView

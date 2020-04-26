@@ -8,15 +8,28 @@
     android:background="@color/fondoAzul"
     tools:context=".Dieta">
 
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/dieta"
-    android:textSize="50dp"
-    android:fontFamily="@font/redrock"
-    android:textColor="@color/blanco"
-    android:gravity="center"
-    ></TextView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/atras"
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_chevron_left_black_24dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dieta"
+            android:textSize="50dp"
+            android:fontFamily="@font/redrock"
+            android:textColor="@color/blanco"
+            android:gravity="center"
+            ></TextView>
+
+    </RelativeLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
