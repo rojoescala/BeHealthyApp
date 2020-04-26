@@ -9,12 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".Ejercicio" />
         <activity android:name=".Menu" />
         <activity android:name=".Medicamentos" />
         <activity android:name=".AgregarMedicamente" />
         <activity android:name=".Dieta" />
             <activity android:name=".Sign_in" >
+=======
+        <activity android:name=".pantallaGlucosa"></activity>
+        <activity android:name=".plan2" />
+        <activity android:name=".plan" />
+        <activity android:name=".ejercicio" />
+        <activity android:name=".menu" />
+        <activity android:name=".Medicamentos" />
+        <activity android:name=".sign_in" />
+        <activity android:name=".agregarMedicamente" />
+        <activity android:name=".dieta" />
+        <activity android:name=".MainActivity">
+>>>>>>> master
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,4 +36,8 @@
         </activity>
     </application>
 
+<<<<<<< HEAD
 </manifest>
+=======
+</manifest>
+>>>>>>> master

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondoAzul"
+    tools:context=".plan">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/redrock"
+        android:text="Plan"
+        android:textColor="@color/blanco"
+        android:textSize="70sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/redrock"
+        android:text="10"
+        android:textColor="@color/blanco"
+        android:textSize="120sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Recomendaciones"
+        android:textAllCaps="true"
+        android:textColor="@color/blanco"
+        android:textSize="25sp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6. Actuar rápido ante una hipoglucemia"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
+            android:padding="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7. Evitar las complicacines de la diabtetes"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
+            android:padding="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8. Realizar revisión oftamológicas"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
+            android:padding="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9. Cuidar los pies"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
+            android:padding="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10. Ser adherente con la medición"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
+            android:padding="20dp"
+            />
+    </LinearLayout>
+</LinearLayout>
