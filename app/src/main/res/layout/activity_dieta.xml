@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondoAzul"
+    tools:context=".Dieta">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/atras"
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_chevron_left_black_24dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dieta"
+            android:textSize="50dp"
+            android:fontFamily="@font/redrock"
+            android:textColor="@color/blanco"
+            android:gravity="center"
+            ></TextView>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lunes"
+        android:gravity="center"
+        android:textColor="@color/blanco"
+        android:textSize="18dp">
+    </TextView>
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dieta2_0"></ImageView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/descripcion_dieta"
+        android:textColor="@color/blanco"
+        android:textSize="@dimen/letra_descripcion_rutina"
+        android:textAlignment="center"
+        android:paddingHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        ></TextView>
+
+
+    <!-- Desayuno -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/checkbox"></Button>
+
+           <TextView
+               android:layout_gravity="center"
+               android:layout_marginRight="10dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/desayuno"
+               android:textColor="@color/blanco"
+               android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/desayuno_2"
+            android:textColor="@color/blanco"
+            android:textAlignment="center"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+    <!-- Comida -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="25dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/checkbox"></Button>
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comida"
+            android:textColor="@color/blanco"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comida_2"
+            android:textColor="@color/blanco"
+            android:textAlignment="center"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+    <!-- Merienda -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="25dp"
+        android:layout_marginBottom="10dp"
+       >
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/checkbox"></Button>
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/merienda"
+            android:textColor="@color/blanco"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/merienda_2"
+            android:textColor="@color/blanco"
+            android:textAlignment="center"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+    <!-- Cena -->
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="25dp"
+        android:layout_marginBottom="10dp"
+    >
+
+    <Button
+        android:layout_gravity="center"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/checkbox"></Button>
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cena"
+        android:textColor="@color/blanco"
+        android:textSize="15dp"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cena_2"
+        android:textColor="@color/blanco"
+        android:textAlignment="center"
+        android:textSize="15dp"></TextView>
+</LinearLayout>
+    <!-- Recena -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="25dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/checkbox"></Button>
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recena"
+            android:textColor="@color/blanco"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recena_2"
+            android:textColor="@color/blanco"
+            android:textAlignment="center"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+

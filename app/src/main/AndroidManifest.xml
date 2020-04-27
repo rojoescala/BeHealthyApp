@@ -1,4 +1,4 @@
-<<<<<<< Original<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 package="escalante.roberto.behealthy">
 
 <application
@@ -8,19 +8,10 @@ package="escalante.roberto.behealthy">
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-    <
-    <
-    <
-    <
-    <
-    <
-    < HEAD
 
     <activity android:name=".plan2"></activity>
     <activity android:name=".plan" />
-    =======
     <activity android:name=".ejercicio"></activity>
-    >>>>>>> Roberto
     <activity android:name=".menu" />
     <activity android:name=".Medicamentos" />
     <activity android:name=".sign_in" />
@@ -33,9 +24,9 @@ package="escalante.roberto.behealthy">
     </activity>
 </application>
 
-</manifest>=======<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
 
 <application>
     <activity android:name="escalante.roberto.behealthy.Alerta"></activity>
 </application>
-</manifest>>>>>>>> Added
+</manifest>

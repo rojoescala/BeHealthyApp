@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 
-class Ejercicio : AppCompatActivity() {
+class Dieta : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ejercicio)
+        setContentView(R.layout.activity_dieta)
+
 
         var intent = Intent(this, Menu::class.java)
 

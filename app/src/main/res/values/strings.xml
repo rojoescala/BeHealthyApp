@@ -19,4 +19,27 @@
     <string name="rutina3">4 series de 15 sentadillas cada una</string>
     <string name="rutina4">3 series de 5 saltos de rana</string>
     <string name="terminado">Terminada</string>
+    <string name="desayuno">DESAYUNO</string>
+    <string name="comida">COMIDA</string>
+    <string name="merienda">MERIENDA</string>
+    <string name="cena">CENA</string>
+    <string name="recena">RECENA</string>
+    <string name="desayuno_2">LECHE 200 cc, PAN 40g, FRUTA 1 PIEZA</string>
+    <string name="comida_2">LENTEJAS 100g, FILETE TERNERA, ENSALADA FRUTA 1 PIEZA</string>
+    <string name="merienda_2">1 YOGURT GRIEGO</string>
+    <string name="cena_2">VERDURA 200 g, TORTILLA, ARROZ 80 g, FRUTA 1 PIEZA</string>
+    <string name="recena_2">1/2 VASO DE LECHE ALEMNDRA</string>
+    <string name="descripcion_dieta">Comienza la semana con este delicioso plan nutritivo</string>
+    <string name="dias">Días</string>
+    <string name="dia1">Lunes</string>
+    <string name="dia2">Martes</string>
+    <string name="dia3">Miercoles</string>
+    <string name="dia4">Jueves</string>
+    <string name="dia5">Viernes</string>
+    <string name="dia6">Sabado</string>
+    <string name="dia7">Domingo</string>
+    <string name="hora">Hora</string>
+    <string name="agregar">Agregar</string>
+
+
 </resources>
