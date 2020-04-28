@@ -28,4 +28,8 @@
             </intent-filter>
         </activity>
     </application>
+<<<<<<< HEAD
 </manifest>
+=======
+</manifest>
+>>>>>>> Christian

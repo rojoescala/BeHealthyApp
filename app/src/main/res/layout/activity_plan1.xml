@@ -8,7 +8,11 @@
     android:background="@color/fondoAzul"
     tools:context=".plan">
 
+<<<<<<< HEAD
     <RelativeLayout
+=======
+    <LinearLayout
+>>>>>>> Christian
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -22,6 +26,7 @@
 
 
         <TextView
+<<<<<<< HEAD
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -35,6 +40,25 @@
 
 
     </RelativeLayout>
+=======
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/redrock"
+            android:gravity="center"
+            android:text="Plan"
+            android:textColor="@color/blanco"
+            android:paddingHorizontal="100dp"
+            android:textSize="50sp" />
+
+        <ImageView
+            android:id="@+id/siguiente"
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_chevron_right_black_24dp"/>
+    </LinearLayout>
+>>>>>>> Christian
 
     <TextView
         android:layout_width="wrap_content"
