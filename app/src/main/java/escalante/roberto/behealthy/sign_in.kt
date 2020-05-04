@@ -1,13 +1,6 @@
 package escalante.roberto.behealthy
 
 import android.content.Intent
-<<<<<<< HEAD
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.Button
-
-class Sign_in : AppCompatActivity() {
-=======
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +15,6 @@ import com.google.android.gms.tasks.Task
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 const val RC_SIGN_IN = 343
->>>>>>> Christian
 
 class Sign_in : AppCompatActivity() {
     lateinit var mGoogleSignInClient:GoogleSignInClient
@@ -30,9 +22,6 @@ class Sign_in : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-<<<<<<< HEAD
-
-=======
         // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         // Configure sign-in to request the user's ID, email address, and basic
@@ -44,25 +33,19 @@ class Sign_in : AppCompatActivity() {
 
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
->>>>>>> Christian
 
 
         var intent = Intent(this, Menu::class.java)
         var boton: Button = findViewById(R.id.btn_signin) as Button
-<<<<<<< HEAD
-=======
 
         sign_in_button.setOnClickListener{
             val signInIntent = mGoogleSignInClient.signInIntent
             startActivityForResult(signInIntent, RC_SIGN_IN)
         }
->>>>>>> Christian
         boton.setOnClickListener{
            startActivity(intent)
         }
 
-<<<<<<< HEAD
-=======
 
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -94,6 +77,5 @@ class Sign_in : AppCompatActivity() {
             val intent = Intent(this, Menu::class.java)
             startActivity(intent)
         }
->>>>>>> Christian
     }
 }
