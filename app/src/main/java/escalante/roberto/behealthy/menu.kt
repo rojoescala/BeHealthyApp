@@ -13,7 +13,7 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         // No se si es necesario hacer muchos itentos
-        var intent = Intent(this, Medicamentos::class.java)
+
         var intent2 = Intent(this, Alerta::class.java)
         var intent3 = Intent(this, Dieta::class.java)
         var intent4 = Intent(this, pantallaGlucosa::class.java)
@@ -22,7 +22,7 @@ class Menu : AppCompatActivity() {
 
 
 
-        var botonMedicamentos: TextView = findViewById(R.id.btn_medicamentos) as TextView
+
         var botonAlerta: TextView = findViewById(R.id.btn_alerta) as TextView
         var botonDieta: LinearLayout = findViewById(R.id.btn_dieta) as LinearLayout
         var botonGlucosa: LinearLayout = findViewById(R.id.btn_glucosa) as LinearLayout
@@ -32,9 +32,6 @@ class Menu : AppCompatActivity() {
 
 
 
-        botonMedicamentos.setOnClickListener{
-            startActivity(intent)
-        }
 
 
         botonAlerta.setOnClickListener{

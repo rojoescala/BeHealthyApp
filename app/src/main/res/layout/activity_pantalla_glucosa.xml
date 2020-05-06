@@ -29,9 +29,6 @@
             android:text="Glucosa"
             android:textColor="@color/blanco"
             android:textSize="50sp"/>
-
-
-
     </RelativeLayout>
 
 
