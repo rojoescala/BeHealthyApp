@@ -11,7 +11,6 @@ class Dieta : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dieta)
 
-
         var intent = Intent(this, Menu::class.java)
 
         var botonAtras: ImageView = findViewById(R.id.atras) as ImageView
