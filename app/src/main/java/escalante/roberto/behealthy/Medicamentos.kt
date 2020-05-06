@@ -22,8 +22,8 @@ class Medicamentos : AppCompatActivity() {
         }
 
         botonAgregar.setOnClickListener{
-            var intent = Intent(this, AgregarMedicamente::class.java)
-            startActivityForResult(intent,123)
+            var intent2 = Intent(this, AgregarMedicamente::class.java)
+            startActivityForResult(intent2,123)
         }
     }
 }
