@@ -149,7 +149,7 @@ class Menu : AppCompatActivity() {
         var pH: Float = (hidratacion * 100 / total).toFloat()
         var pE: Float = (ejercicio * 100 / total).toFloat()
 
-        var porcentaje = pD+pH+pE
+        var porcentaje: Int = pD.toInt()+pH.toInt()+pE.toInt()
 
         Porciento.setText(""+porcentaje)
 

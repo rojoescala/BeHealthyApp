@@ -130,7 +130,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:paddingLeft="20dp"
-                    android:text="75"
+                    android:text="0"
                     android:textSize="50dp"
                     android:textStyle="normal"
                     tools:layout_editor_absoluteX="62dp"
