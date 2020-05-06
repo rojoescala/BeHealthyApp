@@ -5,4 +5,6 @@
     <dimen name="letra_menu">22dp</dimen>
     <dimen name="letra_rutina_numero">40dp</dimen>
     <dimen name="letra_descripcion_rutina">18dp</dimen>
+    <dimen name = "grapwith">15dp</dimen>
+    <dimen name = "graphBackground">5dp</dimen>
 </resources>
