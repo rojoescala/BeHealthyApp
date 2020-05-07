@@ -43,6 +43,7 @@
 
 
         <TextView
+            android:id="@+id/textoDia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -86,6 +87,8 @@
             android:textColor="@color/fondoAzul"
 
         />
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,6 +99,7 @@
             android:textColor="@color/fondoAzul"
         />
         <TextView
+            android:id="@+id/textoMedicamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

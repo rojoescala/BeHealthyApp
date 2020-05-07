@@ -259,6 +259,7 @@
         android:textColor="@color/blanco"
         android:textSize="20dp"
         android:text="@string/agregar"
+        android:id="@+id/agregarbutton"
 
         ></Button>
 
