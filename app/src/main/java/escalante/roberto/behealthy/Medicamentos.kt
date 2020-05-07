@@ -38,9 +38,15 @@ class Medicamentos : AppCompatActivity() {
         var intent = Intent(this, Menu::class.java)
 
         var botonAtras: ImageView = findViewById(R.id.atras) as ImageView
+        var botonAgregar: ImageView = findViewById(R.id.fab) as ImageView
 
         botonAtras.setOnClickListener{
             startActivity(intent)
+        }
+
+        botonAgregar.setOnClickListener{
+            var intent2 = Intent(this, AgregarMedicamente::class.java)
+            startActivityForResult(intent2,123)
         }
     }
 

@@ -18,5 +18,7 @@ class Ejercicio : AppCompatActivity() {
         botonAtras.setOnClickListener{
             startActivity(intent)
         }
+
+
     }
 }
