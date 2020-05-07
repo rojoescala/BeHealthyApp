@@ -73,7 +73,8 @@ class Medicamentos : AppCompatActivity() {
 
     fun fetchingData(){
         try {
-            var json : String = agregarme.getJSON()
+             var json: String = jsonFile?.getData(this) ?:""
+            //var json : String = agregarme.getJSON()
 
             if (json != ""){
                 this.data = true
@@ -103,9 +104,9 @@ class Medicamentos : AppCompatActivity() {
         var lista = ArrayList<medicinas>()
         for (i in 0..jsonArray.length()) {
             try {
-                val nombre = jsonArray.getJSONObject(i).getString("nombre")
-                val dias = jsonArray.getJSONObject(i).getString("dias")
-                val hora = jsonArray.getJSONObject(i).getString("hora")
+                var nombre = jsonArray.getJSONObject(i).getString("nombre")
+                var dias = jsonArray.getJSONObject(i).getString("dias")
+                var hora = jsonArray.getJSONObject(i).getString("hora")
                 var med = medicinas(nombre, dias, hora)
                 lista.add(med)
             } catch (exception: JSONException) {
@@ -125,6 +126,9 @@ class Medicamentos : AppCompatActivity() {
             this.medicinas = medicinas
         }
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+
+
+            
             var mie = medicinas[position]
             var inflator = LayoutInflater.from(contexto)
             var vista = inflator.inflate(R.layout.item_medicamento, null)

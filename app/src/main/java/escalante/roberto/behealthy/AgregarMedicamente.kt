@@ -13,7 +13,7 @@ import escalante.roberto.behealthy.Medicamentos as Medicamentos
 
 class AgregarMedicamente : AppCompatActivity() {
 
-    var jsonFileMedi: JSONFileMedicina? = null
+    var jsonFile: JSONFileMedicina? = null
     var data : Boolean = false
     var lista = ArrayList<medicinas>()
 
@@ -21,7 +21,7 @@ class AgregarMedicamente : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_medicamente)
 
-        jsonFileMedi = JSONFileMedicina()
+        jsonFile = JSONFileMedicina()
 
         var intent = Intent(this, Medicamentos::class.java)
 
@@ -81,12 +81,12 @@ class AgregarMedicamente : AppCompatActivity() {
 
         }
 
-        jsonFileMedi?.saveData(this,jsonArray.toString())
+        jsonFile?.saveData(this,jsonArray.toString())
 
         Toast.makeText(this,"Datos guardados", Toast.LENGTH_SHORT).show()
     }
     fun getJSON(): String {
-        var json3 : String = jsonFileMedi?.getData(this) ?:""
+        var json3 : String = jsonFile?.getData(this) ?:""
         return json3
     }
 
