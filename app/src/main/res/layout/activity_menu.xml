@@ -92,7 +92,8 @@
             android:text="@string/tuMeta"
             android:textSize="25dp"
             android:layout_marginTop="20dp"
-            android:gravity="center">
+            android:gravity="center"
+        >
         </TextView>
 
         <LinearLayout
@@ -225,6 +226,4 @@
                 android:textSize="@dimen/letra_menu"></TextView>
         </LinearLayout>
     </GridLayout>
-
-
 </LinearLayout>

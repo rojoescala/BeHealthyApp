@@ -13,7 +13,6 @@
         <activity android:name=".Alerta"/>
         <activity android:name=".Ejercicio" />
         <activity android:name=".Menu" />
-        <activity android:name=".Medicamentos" />
         <activity android:name=".AgregarMedicamente" />
         <activity android:name=".Dieta" />
         <activity android:name=".pantallaGlucosa" />
