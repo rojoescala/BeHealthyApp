@@ -8,7 +8,8 @@
     android:background="@color/fondoAzul"
     tools:context=".plan">
 
-    <LinearLayout
+    <GridLayout
+        android:columnCount="3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -34,13 +35,23 @@
             android:textSize="50sp" />
 
         <ImageView
+            android:layout_gravity="right"
             android:id="@+id/siguiente"
             android:layout_marginTop="10dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_chevron_right_black_24dp"/>
-    </LinearLayout>
-
+    </GridLayout>
+    <TextView
+        android:id="@+id/textoDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAllCaps="true"
+        android:text="Lunes"
+        android:textColor="@color/blanco"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"></TextView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,7 +59,7 @@
         android:fontFamily="@font/redrock"
         android:text="10"
         android:textColor="@color/blanco"
-        android:textSize="120sp" />
+        android:textSize="100sp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -35,7 +35,7 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         // No se si es necesario hacer muchos itentos
-        var intent = Intent(this, AgregarMedicamente::class.java)
+        var intent = Intent(this,  Medicamentos::class.java)
         var intent2 = Intent(this, Alerta::class.java)
         var intent3 = Intent(this, Dieta::class.java)
         var intent4 = Intent(this, pantallaGlucosa::class.java)
@@ -64,6 +64,7 @@ class Menu : AppCompatActivity() {
 
 
         botonMedicamentos.setOnClickListener {
+            intent.putExtra("Type", "medicamentos")
             startActivity(intent)
         }
 
@@ -166,8 +167,6 @@ class Menu : AppCompatActivity() {
         lista.add(Porcentaje("Ejercicio", pE, R.color.fondoAzul, ejercicio))
 
         val fondo = CustomCircleDrawable(this,lista)
-
-
        graph.background = fondo
     }
 

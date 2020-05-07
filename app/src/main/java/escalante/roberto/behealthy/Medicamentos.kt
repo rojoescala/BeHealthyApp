@@ -1,38 +1,59 @@
 package escalante.roberto.behealthy
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.EditText
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_medicamentos.*
+import kotlinx.android.synthetic.main.item_medicamento.view.*
 import org.json.JSONArray
 import org.json.JSONException
-import org.json.JSONObject
+import java.util.*
+import kotlin.collections.ArrayList
 
 class Medicamentos : AppCompatActivity() {
+    lateinit var agregarme: AgregarMedicamente
 
-    var jsonFile: JSONFile? = null
-    var name = "medicamento"
-    var day = "lunes"
-    var hora = "10:30 a.m."
+
+
+    var jsonFile: JSONFileMedicina? = null
+    var name = ""
+    var day = ""
+    var time = ""
     var data : Boolean = false
-    var lista = ArrayList<medicinas>()
+    var listaMedicamentos = ArrayList<medicinas>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medicamentos)
 
+        var sCalendar = Calendar.getInstance()
+        var dayLongName: String? = sCalendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault())
+        textoDia.setText(dayLongName)
 
 
+        var adaptador = AdaptorMedicamentos(this,listaMedicamentos)
+        val bundle = intent.extras
 
-        jsonFile = JSONFile()
-
+        jsonFile = JSONFileMedicina()
         fetchingData()
+            if(bundle!=null){
+                var type = bundle.getString("Type")
+                when(type){
+                    "medicamentos" -> adaptador = AdaptorMedicamentos(this,listaMedicamentos)
+                }
+            }
+
+
+        list_medicamentos.adapter =adaptador
+
+
 
 
         var intent = Intent(this, Menu::class.java)
@@ -50,43 +71,28 @@ class Medicamentos : AppCompatActivity() {
         }
     }
 
-    fun  fetchingData(){
-        //leer el archivo json
-
-
-        //var txtdia: TextView = findViewById(R.id.textoDia) as TextView
-
+    fun fetchingData(){
         try {
-            var json: String = jsonFile?.getData(this)?: ""
-            if(json!= ""){
+            var json : String = agregarme.getJSON()
 
-                this.data=true
-                var jsonArray: JSONArray = JSONArray(json)
+            if (json != ""){
+                this.data = true
+                var jsonArray : JSONArray = JSONArray(json)
 
-                this.lista = parseJson(jsonArray)
+                this.listaMedicamentos = parseJson(jsonArray)
 
-
-                for (i in lista){
-
-                    //txtdia.setText(i.nombre)
-                    //textoMedicamento.setText(i.nombre)
-
-
-                    //when(i.nombre){
-                    //    "lunes" -> name = i.nombre
-                    //    "martes" -> day = i.dias
-                    //    "miercoles" -> hora = i.hora
-
-                    //}
+              /* for (i in listaMedicamentos){
+                    name = i.nombre
+                    day = i.dias
+                    time = i.hora
                 }
-
-            } else{
+               */
+            } else {
                 this.data = false
             }
-        }catch (exception: JSONException){
+        } catch (exception: JSONException){
             exception.printStackTrace()
         }
-
     }
 
 
@@ -94,10 +100,7 @@ class Medicamentos : AppCompatActivity() {
 
 
     fun parseJson (jsonArray: JSONArray): ArrayList<medicinas> {
-        //convierte el arreglo json en la lista de objetos tipo medicamentos
-
         var lista = ArrayList<medicinas>()
-
         for (i in 0..jsonArray.length()) {
             try {
                 val nombre = jsonArray.getJSONObject(i).getString("nombre")
@@ -109,9 +112,43 @@ class Medicamentos : AppCompatActivity() {
                 exception.printStackTrace()
             }
         }
-
-
         return lista
+    }
+
+    private class AdaptorMedicamentos: BaseAdapter {
+        var contexto: Context? = null
+        var medicinas = ArrayList<medicinas>()
+
+
+        constructor(contexto: Context, medicinas: ArrayList<medicinas>){
+            this.contexto = contexto
+            this.medicinas = medicinas
+        }
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            var mie = medicinas[position]
+            var inflator = LayoutInflater.from(contexto)
+            var vista = inflator.inflate(R.layout.item_medicamento, null)
+
+            vista.nombre_medicamento.setText(mie.nombre)
+            vista.dias_medicamento.setText(mie.dias)
+            vista.hora_medicamento.setText(mie.hora)
+
+
+            return vista
+        }
+
+        override fun getItem(position: Int): Any {
+            return medicinas[position]
+        }
+
+        override fun getItemId(position: Int): Long {
+            return 1
+        }
+
+        override fun getCount(): Int {
+            return medicinas.size
+        }
+
     }
 
 }

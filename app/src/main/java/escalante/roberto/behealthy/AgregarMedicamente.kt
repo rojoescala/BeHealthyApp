@@ -5,17 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import escalante.roberto.behealthy.utilies.JSONFile
 import kotlinx.android.synthetic.main.activity_agregar_medicamente.*
 import org.json.JSONArray
-import org.json.JSONException
 import org.json.JSONObject
+import escalante.roberto.behealthy.Medicamentos as Medicamentos
 
 class AgregarMedicamente : AppCompatActivity() {
 
-    var jsonFile: JSONFile? = null
-    var name = "medicamento"
-    var day = "lunes"
-    var hora = "10:30 a.m."
+    var jsonFileMedi: JSONFileMedicina? = null
     var data : Boolean = false
     var lista = ArrayList<medicinas>()
 
@@ -23,15 +21,42 @@ class AgregarMedicamente : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_medicamente)
 
+        jsonFileMedi = JSONFileMedicina()
+
         var intent = Intent(this, Medicamentos::class.java)
 
-        //jsonFile = JSONFile()
 
-        //fetchingData()
+
 
         agregarbutton.setOnClickListener{
-            guardar()
-            startActivity(intent)
+                var nombreMedicamento= nombre.text.toString()
+                var horaMedicamento = hora.text.toString()
+                var dias: String = ""
+
+                if (checkLunes.isChecked)
+                    dias = "Lunes, "
+                if(checkMartes.isChecked)
+                    dias = dias+"Martes"
+                if (checkMiercoles.isChecked)
+                    dias = dias+"Miercoles"
+                if (checkJueves.isChecked)
+                    dias = dias+"Jueves"
+                if (checkViernes.isChecked)
+                    dias = dias+"Viernes"
+                if (checkSabado.isChecked)
+                    dias = dias+"Sabado"
+                if (checkDomingo.isChecked)
+                    dias = dias+"Domingo,"
+
+
+                var medi = medicinas (nombreMedicamento, dias, horaMedicamento)
+
+                lista.add(medi)
+
+
+
+                guardar()
+                startActivity(intent)
         }
 
     }
@@ -56,10 +81,13 @@ class AgregarMedicamente : AppCompatActivity() {
 
         }
 
-        jsonFile?.saveData(this,jsonArray.toString())
+        jsonFileMedi?.saveData(this,jsonArray.toString())
 
         Toast.makeText(this,"Datos guardados", Toast.LENGTH_SHORT).show()
-
+    }
+    fun getJSON(): String {
+        var json3 : String = jsonFileMedi?.getData(this) ?:""
+        return json3
     }
 
 

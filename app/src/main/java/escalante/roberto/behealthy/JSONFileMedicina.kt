@@ -4,9 +4,9 @@ import android.content.Context
 import android.util.Log
 import java.io.IOException
 
-class JSONFile{
+class JSONFileMedicina{
 
-    val medicinas = "data.json"
+    val medicinas = "data2.json"
 
     constructor(){
 

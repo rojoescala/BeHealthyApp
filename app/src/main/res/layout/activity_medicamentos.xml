@@ -47,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textAllCaps="true"
             android:text="Lunes"
             android:textColor="@color/blanco"
             android:textSize="18sp"
@@ -64,7 +65,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="10dp"
-        android:id="@+id/list_products"
+        android:id="@+id/list_medicamentos"
         ></ListView>
     <ImageButton
         android:id="@+id/fab"
@@ -86,39 +87,6 @@
 
 
 
-<<<<<<< HEAD
-        />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No olvides tomar tu medicamento"
-            android:textAllCaps="true"
-            android:layout_gravity="center"
-            android:textSize="15sp"
-            android:textColor="@color/fondoAzul"
-        />
-        <TextView
-            android:id="@+id/textoMedicamento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Metformina tableta 850 mg y pioglitazona 15mg"
-            android:textAllCaps="true"
-            android:layout_gravity="center"
-            android:textSize="12sp"
-            android:textColor="@color/fondoAzul"
-        />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/gymed"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-        />
-=======
->>>>>>> 67520edb277fc87034f0f02f5a97af75e26a07a3
 
 
 

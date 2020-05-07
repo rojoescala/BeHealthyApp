@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/fondoAzul"
     tools:context=".plan">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
@@ -17,7 +17,7 @@
             android:layout_height="50dp"
             android:src="@drawable/ic_chevron_left_black_24dp"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/redrock"
@@ -26,7 +26,18 @@
             android:textColor="@color/blanco"
             android:paddingHorizontal="100dp"
             android:textSize="50sp" />
-    </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textoDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAllCaps="true"
+        android:text="Lunes"
+        android:textColor="@color/blanco"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"></TextView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +45,7 @@
         android:fontFamily="@font/redrock"
         android:text="10"
         android:textColor="@color/blanco"
-        android:textSize="120sp" />
+        android:textSize="100sp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -22,6 +22,7 @@
 
 
     <EditText
+        android:id="@+id/nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"
@@ -63,6 +64,7 @@
             android:layout_height="wrap_content"
             android:gravity="right">
             <CheckBox
+                android:id="@+id/checkLunes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -93,6 +95,7 @@
             android:layout_height="wrap_content"
             android:gravity="right">
             <CheckBox
+                android:id="@+id/checkMartes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -121,6 +124,7 @@
             android:layout_height="wrap_content"
             android:gravity="right">
             <CheckBox
+                android:id="@+id/checkMiercoles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -149,6 +153,7 @@
             android:layout_height="wrap_content"
             android:gravity="right">
             <CheckBox
+                android:id="@+id/checkJueves"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -177,6 +182,7 @@
             android:layout_height="wrap_content"
             android:gravity="right">
             <CheckBox
+                android:id="@+id/checkViernes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -204,6 +210,7 @@
             android:layout_height="wrap_content"
             android:gravity="right">
             <CheckBox
+                android:id="@+id/checkSabado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -231,6 +238,7 @@
             android:layout_height="wrap_content"
             android:gravity="right">
             <CheckBox
+                android:id="@+id/checkDomingo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -240,6 +248,7 @@
 
 
     <EditText
+        android:id="@+id/hora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"
