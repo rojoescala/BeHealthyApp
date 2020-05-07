@@ -31,9 +31,11 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/textoDia"
+        android:text="Lunes"
+        android:textAllCaps="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lunes"
         android:gravity="center"
         android:textColor="@color/blanco"
         android:textSize="18dp">
@@ -41,7 +43,7 @@
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:src="@drawable/dieta2"></ImageView>
     <TextView
         android:layout_width="match_parent"
@@ -65,14 +67,14 @@
         android:layout_gravity="center">
 
         <Button
-            android:layout_gravity="center"
+
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/checkbox"></Button>
 
            <TextView
-               android:layout_gravity="center"
+
                android:layout_marginRight="10dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -97,14 +99,12 @@
         android:layout_gravity="center">
 
         <Button
-            android:layout_gravity="center"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/checkbox"></Button>
 
         <TextView
-            android:layout_gravity="center"
             android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -129,14 +129,12 @@
        >
 
         <Button
-            android:layout_gravity="center"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/checkbox"></Button>
 
         <TextView
-            android:layout_gravity="center"
             android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -161,14 +159,12 @@
     >
 
     <Button
-        android:layout_gravity="center"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/checkbox"></Button>
 
     <TextView
-        android:layout_gravity="center"
         android:layout_marginRight="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -193,14 +189,12 @@
         >
 
         <Button
-            android:layout_gravity="center"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/checkbox"></Button>
 
         <TextView
-            android:layout_gravity="center"
             android:layout_marginRight="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

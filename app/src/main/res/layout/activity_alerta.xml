@@ -36,17 +36,22 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/textoDia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textAllCaps="true"
             android:text="Lunes"
             android:textColor="@color/blanco"
             android:textSize="18sp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             />
+
+
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
@@ -62,7 +67,9 @@
             android:textSize="20sp"
             android:layout_marginBottom="20dp"/>
     </LinearLayout>
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
@@ -96,7 +103,7 @@
             android:src="@drawable/agua"
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
-        />
+            />
         <Button
             android:id="@+id/btnagua"
             android:layout_width="wrap_content"
@@ -114,5 +121,17 @@
             android:layout_gravity="center"
             android:padding="15dp"
             />
+        <ProgressBar
+            android:id="@+id/progresswater"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            />
     </LinearLayout>
+        </ScrollView>
+
+
+
 </LinearLayout>

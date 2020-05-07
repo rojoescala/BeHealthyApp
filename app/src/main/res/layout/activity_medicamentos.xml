@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Medicamentos">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fondoAzul"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/atras"
+                android:layout_marginTop="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_chevron_left_black_24dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/redrock"
+                android:text="Medicamentos"
+                android:textColor="@color/blanco"
+                android:textSize="50sp"/>
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textoDia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAllCaps="true"
+            android:text="Lunes"
+            android:textColor="@color/blanco"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"
+        />
+
+    </LinearLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="10dp"
+        android:id="@+id/list_medicamentos"
+        ></ListView>
+    <ImageButton
+        android:id="@+id/fab"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:layout_gravity="bottom|end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_black_24dp"
+        android:background="@drawable/button_agregar_medicamentos">
+
+    </ImageButton>
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>
