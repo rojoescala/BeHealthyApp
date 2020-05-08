@@ -28,6 +28,10 @@ class Menu : AppCompatActivity() {
     var ejercicio = 0.0F
     var data: Boolean = false
     var lista = ArrayList<Porcentaje>()
+    var porcentaje: Porcentaje? =  null
+    var estado: Boolean = false
+    // var s: String = getIntent().getStringExtra()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +39,7 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         // No se si es necesario hacer muchos itentos
-        var intent = Intent(this,  Medicamentos::class.java)
+
         var intent2 = Intent(this, Alerta::class.java)
         var intent3 = Intent(this, Dieta::class.java)
         var intent4 = Intent(this, pantallaGlucosa::class.java)
@@ -54,6 +58,7 @@ class Menu : AppCompatActivity() {
         jsonFile = JSONFile()
 
         fetchingData()
+
         if (!data){
             var porcentajes = ArrayList<Porcentaje>()
             val fondo = CustomCircleDrawable(this, porcentajes)
@@ -63,7 +68,12 @@ class Menu : AppCompatActivity() {
         }
 
 
+
+
+
+
         botonMedicamentos.setOnClickListener {
+            var intent = Intent(this,  Medicamentos::class.java)
             intent.putExtra("Type", "medicamentos")
             startActivity(intent)
         }
@@ -91,15 +101,29 @@ class Menu : AppCompatActivity() {
             startActivity(intent6)
 
         }
+        /*
+        estado = intent.getBooleanExtra("estado",false)
+        if (estado == true){
+            ejercicio = 1.8F
+            actualizarGrafica()
+            guardar()
+        }
 
-       /* botonTerminado.setOnClickListener{
+         */
+
+
+
+        /*botonTerminado.setOnClickListener{
             ejercicio = 1.8F
             actualizarGrafica()
         }
-        */
+
+         */
+
 
 
     }
+
     fun fetchingData(){
         try {
             var json : String = jsonFile?.getData(this) ?:""
@@ -123,6 +147,8 @@ class Menu : AppCompatActivity() {
             exception.printStackTrace()
         }
     }
+
+
     fun parseJson(jsonArray: JSONArray): ArrayList<Porcentaje>{
         var lista = ArrayList<Porcentaje>()
 
@@ -156,10 +182,6 @@ class Menu : AppCompatActivity() {
 
 
 
-        Log.d("porcentajes","dieta " +pD)
-        Log.d("porcentajes","hidratacion " +pH)
-        Log.d("porcentajes","ejercicio " +pE)
-
 
         lista.clear()
         lista.add(Porcentaje("Dieta", pD, R.color.fondoAzul, dieta))
@@ -169,6 +191,7 @@ class Menu : AppCompatActivity() {
         val fondo = CustomCircleDrawable(this,lista)
        graph.background = fondo
     }
+
 
 
     fun guardar(){
@@ -188,4 +211,6 @@ class Menu : AppCompatActivity() {
         jsonFile?.saveData(this, jsonArray.toString())
         Toast.makeText(this,"Datos guardados", Toast.LENGTH_SHORT).show()
     }
+
+
 }

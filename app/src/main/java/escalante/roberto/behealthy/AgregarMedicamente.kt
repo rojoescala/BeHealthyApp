@@ -7,7 +7,9 @@ import android.util.Log
 import android.widget.Toast
 import escalante.roberto.behealthy.utilies.JSONFile
 import kotlinx.android.synthetic.main.activity_agregar_medicamente.*
+import kotlinx.android.synthetic.main.activity_menu.*
 import org.json.JSONArray
+import org.json.JSONException
 import org.json.JSONObject
 import escalante.roberto.behealthy.Medicamentos as Medicamentos
 
@@ -21,8 +23,11 @@ class AgregarMedicamente : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_medicamente)
 
-        jsonFile = JSONFileMedicina()
 
+
+
+        jsonFile = JSONFileMedicina()
+        fetchingData()
         var intent = Intent(this, Medicamentos::class.java)
 
 
@@ -55,21 +60,54 @@ class AgregarMedicamente : AppCompatActivity() {
 
 
 
+
                 guardar()
                 startActivity(intent)
         }
 
     }
 
+    fun fetchingData(){
+        try {
+            var json : String = jsonFile?.getData(this) ?:""
+            if (json != ""){
+                this.data = true
+                var jsonArray : JSONArray = JSONArray(json)
 
+                this.lista = parseJson(jsonArray)
+
+            } else {
+                this.data = false
+            }
+        } catch (exception: JSONException){
+            exception.printStackTrace()
+        }
+    }
+    fun parseJson(jsonArray: JSONArray): java.util.ArrayList<medicinas> {
+        var lista = java.util.ArrayList<medicinas>()
+
+        for (i in 0..jsonArray.length()){
+            try {
+                val nombre = jsonArray.getJSONObject(i).getString("nombre")
+                val dias = jsonArray.getJSONObject(i).getString("dias")
+                val hora = jsonArray.getJSONObject(i).getString("hora")
+                var med = medicinas(nombre, dias, hora)
+                lista.add(med)
+            } catch (exception: JSONException){
+                exception.printStackTrace()
+            }
+        }
+        return lista
+    }
 
 
     fun guardar(){
 
+
         var jsonArray = JSONArray()
         var o : Int = 0
         for(i in lista){
-            Log.d("objetos", i.toString())
+
             var j: JSONObject = JSONObject()
             j.put("nombre", i.nombre)
             j.put("dias", i.dias)
@@ -85,10 +123,7 @@ class AgregarMedicamente : AppCompatActivity() {
 
         Toast.makeText(this,"Datos guardados", Toast.LENGTH_SHORT).show()
     }
-    fun getJSON(): String {
-        var json3 : String = jsonFile?.getData(this) ?:""
-        return json3
-    }
+
 
 
 }
