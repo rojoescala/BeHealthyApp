@@ -13,6 +13,7 @@ import android.widget.Toast
 import escalante.roberto.behealthy.utilies.CustomCircleDrawable
 import escalante.roberto.behealthy.utilies.JSONFile
 import escalante.roberto.behealthy.utilies.Porcentaje
+import kotlinx.android.synthetic.main.activity_agregar_medicamente.*
 import kotlinx.android.synthetic.main.activity_ejercicio.*
 import kotlinx.android.synthetic.main.activity_menu.*
 import org.json.JSONArray
@@ -23,9 +24,9 @@ import java.util.ArrayList
 
 class Menu : AppCompatActivity() {
     var jsonFile: JSONFile? = null
-    var dieta = 0.0F
-    var hidratacion = 0.0F
-    var ejercicio = 0.0F
+    var comida = 0
+    var aguita = 0
+    var movimiento = false
     var data: Boolean = false
     var lista = ArrayList<Porcentaje>()
     var porcentaje: Porcentaje? =  null
@@ -37,6 +38,8 @@ class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
+
 
         // No se si es necesario hacer muchos itentos
 
@@ -58,7 +61,7 @@ class Menu : AppCompatActivity() {
         jsonFile = JSONFile()
 
         fetchingData()
-
+        //actualizarGrafica()
         if (!data){
             var porcentajes = ArrayList<Porcentaje>()
             val fondo = CustomCircleDrawable(this, porcentajes)
@@ -66,6 +69,8 @@ class Menu : AppCompatActivity() {
         } else{
             actualizarGrafica()
         }
+
+
 
 
 
@@ -96,7 +101,7 @@ class Menu : AppCompatActivity() {
         }
 
         botonEjercicio.setOnClickListener {
-            ejercicio = 1.8F
+            //ejercicio = 1.8F
             actualizarGrafica()
             startActivity(intent6)
 
@@ -134,11 +139,11 @@ class Menu : AppCompatActivity() {
                 this.lista = parseJson(jsonArray)
 
                 for (i in lista){
-                    when(i.nombre){
-                        "Dieta" -> dieta = i.total
-                        "Hidratacion" -> hidratacion = i.total
-                        "Ejercicio" -> ejercicio = i.total
-                    }
+
+                    aguita = i.agua
+                    comida = i.dieta
+                    movimiento = i.ejericio
+
                 }
             } else {
                 this.data = false
@@ -154,11 +159,12 @@ class Menu : AppCompatActivity() {
 
         for (i in 0..jsonArray.length()){
             try {
-                val nombre = jsonArray.getJSONObject(i).getString("nombre")
-                val porcentaje = jsonArray.getJSONObject(i).getDouble("porcentaje").toFloat()
-                val color = jsonArray.getJSONObject(i).getInt("color")
-                val total = jsonArray.getJSONObject(i).getDouble("total").toFloat()
-                var porce = Porcentaje (nombre, porcentaje, color, total)
+                val agua = jsonArray.getJSONObject(i).getInt("agua")
+                val dieta = jsonArray.getJSONObject(i).getInt("dieta")
+                val ejercicio = jsonArray.getJSONObject(i).getBoolean("ejercicio")
+                val fecha = jsonArray.getJSONObject(i).getString("fecha")
+
+                var porce = Porcentaje (agua, ejercicio,dieta , fecha)
                 lista.add(porce)
             } catch (exception: JSONException){
                 exception.printStackTrace()
@@ -170,11 +176,16 @@ class Menu : AppCompatActivity() {
 
 
     fun actualizarGrafica(){
-        val total = 9
 
-        var pD: Float = (dieta * 100 / total).toFloat()
-        var pH: Float = (hidratacion * 100 / total).toFloat()
-        var pE: Float = (ejercicio * 100 / total).toFloat()
+        var pH: Float = (aguita.toFloat()*30)/8
+        var pE = 0.0F
+
+        if (movimiento){
+            pE = 20.0F
+        }
+        var pD: Float = (comida.toFloat()*50)/5
+
+
 
         var porcentaje: Int = pD.toInt()+pH.toInt()+pE.toInt()
 
@@ -184,9 +195,8 @@ class Menu : AppCompatActivity() {
 
 
         lista.clear()
-        lista.add(Porcentaje("Dieta", pD, R.color.fondoAzul, dieta))
-        lista.add(Porcentaje("Hidratacion", pH, R.color.fondoAzul, hidratacion))
-        lista.add(Porcentaje("Ejercicio", pE, R.color.fondoAzul, ejercicio))
+        lista.add(Porcentaje(aguita,movimiento,comida,"Sabado"))
+
 
         val fondo = CustomCircleDrawable(this,lista)
        graph.background = fondo
@@ -200,13 +210,12 @@ class Menu : AppCompatActivity() {
         for (i in lista){
             Log.d("objetos", i.toString())
             var j: JSONObject = JSONObject()
-            j.put("nombre", i.nombre)
-            j.put("porcentaje", i.porcentaje)
-            j.put("color", i.color)
-            j.put("total",i.total)
+            j.put("agua", i.agua)
+            j.put("ejercicio", i.ejericio)
+            j.put("dieta",i.dieta)
+            j.put("fecha",i.fecha)
 
             jsonArray.put(o,j)
-            o++
         }
         jsonFile?.saveData(this, jsonArray.toString())
         Toast.makeText(this,"Datos guardados", Toast.LENGTH_SHORT).show()
