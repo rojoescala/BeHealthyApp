@@ -17,7 +17,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class Medicamentos : AppCompatActivity() {
-    lateinit var agregarme: AgregarMedicamente
+
 
 
 
@@ -38,19 +38,14 @@ class Medicamentos : AppCompatActivity() {
         textoDia.setText(dayLongName)
 
 
-        var adaptador = AdaptorMedicamentos(this,listaMedicamentos)
-        val bundle = intent.extras
+
 
         jsonFile = JSONFileMedicina()
         fetchingData()
-            if(bundle!=null){
-                var type = bundle.getString("Type")
-                when(type){
-                    "medicamentos" -> adaptador = AdaptorMedicamentos(this,listaMedicamentos)
-                }
-            }
 
 
+
+        var adaptador = AdaptorMedicamentos(this,listaMedicamentos)
         list_medicamentos.adapter =adaptador
 
 
@@ -73,7 +68,8 @@ class Medicamentos : AppCompatActivity() {
 
     fun fetchingData(){
         try {
-            var json : String = agregarme.getJSON()
+             var json: String = jsonFile?.getData(this) ?:""
+            //var json : String = agregarme.getJSON()
 
             if (json != ""){
                 this.data = true
@@ -81,12 +77,6 @@ class Medicamentos : AppCompatActivity() {
 
                 this.listaMedicamentos = parseJson(jsonArray)
 
-              /* for (i in listaMedicamentos){
-                    name = i.nombre
-                    day = i.dias
-                    time = i.hora
-                }
-               */
             } else {
                 this.data = false
             }
@@ -115,6 +105,7 @@ class Medicamentos : AppCompatActivity() {
         return lista
     }
 
+
     private class AdaptorMedicamentos: BaseAdapter {
         var contexto: Context? = null
         var medicinas = ArrayList<medicinas>()
@@ -125,6 +116,9 @@ class Medicamentos : AppCompatActivity() {
             this.medicinas = medicinas
         }
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+
+
+            
             var mie = medicinas[position]
             var inflator = LayoutInflater.from(contexto)
             var vista = inflator.inflate(R.layout.item_medicamento, null)

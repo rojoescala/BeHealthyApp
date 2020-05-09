@@ -10,7 +10,7 @@ import java.util.ArrayList
 class CustomCircleDrawable: Drawable {
     var coordernadas: RectF? = null
     var anguloBarrido: Float = 0.0F
-    var anguloInicio: Float = 0.0F
+    var anguloInicio: Float = 270.0F
     var grosorFondo: Int = 0
     var grosorMetrica: Int = 0
     var context: Context? = null
