@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "758323978408",
+    "firebase_url": "https://behealthy-b1974.firebaseio.com",
+    "project_id": "behealthy-b1974",
+    "storage_bucket": "behealthy-b1974.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758323978408:android:53e7ac42a852a76f5ce29d",
+        "android_client_info": {
+          "package_name": "escalante.roberto.behealthy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758323978408-prp5mgh4vo4ooc6tlc4695hqndpjg5m3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "escalante.roberto.behealthy",
+            "certificate_hash": "83fa9142647e909ffbcaa51cd3ed90960de274ad"
+          }
+        },
+        {
+          "client_id": "758323978408-8v31lta4123p6deapjnnvibtdaleov3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi-Q8VLYqb-pEHsqz_OQYIwv52aWW3TR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758323978408-8v31lta4123p6deapjnnvibtdaleov3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
