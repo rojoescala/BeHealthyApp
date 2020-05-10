@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.Toast
+import com.google.firebase.database.FirebaseDatabase
 import escalante.roberto.behealthy.utilies.JSONFile
+import escalante.roberto.behealthy.utilies.Porcentaje
 import kotlinx.android.synthetic.main.activity_medicamentos.*
 import java.util.*
 import kotlin.math.roundToInt
@@ -38,10 +41,20 @@ class Alerta : AppCompatActivity() {
         }
 
         btnagua.setOnClickListener {
-            progressState += 12.5
-            progress.setSecondaryProgress(progressState.roundToInt())
-            //guardar()
+            if (progressState<100.0){
+                progressState += 12.5
+                progress.setSecondaryProgress(progressState.roundToInt())
+                //guardar()
+            }else{
+                Toast.makeText(this,"Sigue asi", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        fun guardar(){
+            val porcentajeAgua=progressState
+            if (progressState<=0){
+                return
+            }
         }
     }
-
 }

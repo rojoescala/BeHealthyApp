@@ -158,8 +158,8 @@ class Menu : AppCompatActivity() {
                 val porcentaje = jsonArray.getJSONObject(i).getDouble("porcentaje").toFloat()
                 val color = jsonArray.getJSONObject(i).getInt("color")
                 val total = jsonArray.getJSONObject(i).getDouble("total").toFloat()
-                var porce = Porcentaje (nombre, porcentaje, color, total)
-                lista.add(porce)
+//                var porce = Porcentaje (nombre, porcentaje, color, total)
+//                lista.add(porce)
             } catch (exception: JSONException){
                 exception.printStackTrace()
             }
@@ -184,9 +184,9 @@ class Menu : AppCompatActivity() {
 
 
         lista.clear()
-        lista.add(Porcentaje("Dieta", pD, R.color.fondoAzul, dieta))
-        lista.add(Porcentaje("Hidratacion", pH, R.color.fondoAzul, hidratacion))
-        lista.add(Porcentaje("Ejercicio", pE, R.color.fondoAzul, ejercicio))
+//        lista.add(Porcentaje("Dieta", pD, R.color.fondoAzul, dieta))
+//        lista.add(Porcentaje("Hidratacion", pH, R.color.fondoAzul, hidratacion))
+//        lista.add(Porcentaje("Ejercicio", pE, R.color.fondoAzul, ejercicio))
 
         val fondo = CustomCircleDrawable(this,lista)
        graph.background = fondo
