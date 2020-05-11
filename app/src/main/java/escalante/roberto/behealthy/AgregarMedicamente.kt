@@ -1,11 +1,19 @@
 package escalante.roberto.behealthy
 
+import android.app.AlarmManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import android.widget.Toast
 import escalante.roberto.behealthy.utilies.JSONFile
+import escalante.roberto.behealthy.utilies.ReminderBroadcaster
 import kotlinx.android.synthetic.main.activity_agregar_medicamente.*
 import kotlinx.android.synthetic.main.activity_menu.*
 import org.json.JSONArray
@@ -23,7 +31,7 @@ class AgregarMedicamente : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_medicamente)
 
-
+        createNotificationCannel()
 
 
         jsonFile = JSONFileMedicina()
@@ -62,6 +70,15 @@ class AgregarMedicamente : AppCompatActivity() {
 
 
                 guardar()
+                val intent=Intent(this, ReminderBroadcaster::class.java)
+                var pendingIntent:PendingIntent= PendingIntent.getBroadcast(this,0,intent,0)
+
+                var alarmManager:AlarmManager= getSystemService(Context.ALARM_SERVICE) as AlarmManager
+                var timeAtButtonClick= SystemClock.elapsedRealtime()
+                var hour=AlarmManager.INTERVAL_HALF_DAY
+
+            alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,timeAtButtonClick+hour,hour,pendingIntent)
+
                 startActivity(intent)
         }
 
@@ -122,6 +139,21 @@ class AgregarMedicamente : AppCompatActivity() {
         jsonFile?.saveData(this,jsonArray.toString())
 
         Toast.makeText(this,"Datos guardados", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun createNotificationCannel(){
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
+            var name:CharSequence="TomaMedicinaChannel"
+            var description:String="Channel toma medicina"
+
+            var importante:Int= NotificationManager.IMPORTANCE_DEFAULT
+            var channel:NotificationChannel= NotificationChannel("tomaMed",name,importante)
+            channel.setDescription(description)
+
+            var noManagger:NotificationManager=getSystemService(NotificationManager::class.java)
+            noManagger.createNotificationChannel(channel)
+        }
+
     }
 
 

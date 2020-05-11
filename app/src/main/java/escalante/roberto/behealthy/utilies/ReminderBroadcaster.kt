@@ -14,8 +14,15 @@ class ReminderBroadcaster: BroadcastReceiver() {
         builder.setContentTitle("No olvides tomar agua")
         builder.setContentText("Recuerda tomar tus 8 vasos de agua")
         builder.setPriority(NotificationCompat.PRIORITY_DEFAULT)
+        var buildermed:NotificationCompat.Builder=NotificationCompat.Builder(p0!!,"tomaMed")
+        buildermed.setSmallIcon(R.drawable.ic_launcher_foreground)
+        buildermed.setContentTitle("¡Toma tu medicina!")
+        buildermed.setContentText("Recuerda tomar tus medicamentos")
+        buildermed.setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
         var nofManager:NotificationManagerCompat= NotificationManagerCompat.from(p0)
+        var nofManagerMed:NotificationManagerCompat= NotificationManagerCompat.from(p0)
         nofManager.notify(200,builder.build())
+        nofManagerMed.notify(201,buildermed.build())
     }
 }
