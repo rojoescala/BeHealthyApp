@@ -56,12 +56,11 @@ class Menu : AppCompatActivity() {
         var botonGlucosa: LinearLayout = findViewById(R.id.btn_glucosa) as LinearLayout
         var botonPlan: LinearLayout = findViewById(R.id.btn_plan) as LinearLayout
         var botonEjercicio: LinearLayout = findViewById(R.id.btn_ejercicio) as LinearLayout
-        //var botonTerminado: Button = findViewById(R.id.buttonTerminado) as Button
+
 
         jsonFile = JSONFile()
 
         fetchingData()
-        //actualizarGrafica()
         if (!data){
             var porcentajes = ArrayList<Porcentaje>()
             val fondo = CustomCircleDrawable(this, porcentajes)
@@ -101,29 +100,10 @@ class Menu : AppCompatActivity() {
         }
 
         botonEjercicio.setOnClickListener {
-            //ejercicio = 1.8F
             actualizarGrafica()
             startActivity(intent6)
 
         }
-        /*
-        estado = intent.getBooleanExtra("estado",false)
-        if (estado == true){
-            ejercicio = 1.8F
-            actualizarGrafica()
-            guardar()
-        }
-
-         */
-
-
-
-        /*botonTerminado.setOnClickListener{
-            ejercicio = 1.8F
-            actualizarGrafica()
-        }
-
-         */
 
 
 
@@ -204,22 +184,6 @@ class Menu : AppCompatActivity() {
 
 
 
-    fun guardar(){
-        var jsonArray = JSONArray()
-        var o : Int = 0
-        for (i in lista){
-            Log.d("objetos", i.toString())
-            var j: JSONObject = JSONObject()
-            j.put("agua", i.agua)
-            j.put("ejercicio", i.ejericio)
-            j.put("dieta",i.dieta)
-            j.put("fecha",i.fecha)
-
-            jsonArray.put(o,j)
-        }
-        jsonFile?.saveData(this, jsonArray.toString())
-        Toast.makeText(this,"Datos guardados", Toast.LENGTH_SHORT).show()
-    }
 
 
 }

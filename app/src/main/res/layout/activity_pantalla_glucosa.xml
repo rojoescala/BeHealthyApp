@@ -39,7 +39,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:text="Azúcar en mejora"
         android:textSize="30dp"
         android:textStyle="bold"
@@ -51,8 +51,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Promedio de glucosa: 0%"
+        android:layout_marginTop="10dp"
+        android:text="Promedio de glucosa: 0"
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_gravity="center"
@@ -61,7 +61,7 @@
         android:id="@+id/glucosa_text"
         android:background="@drawable/round_edittext"
         android:hint="Glucosa"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_width="250dp"
         android:layout_height="44dp"
         android:alpha="0.6"

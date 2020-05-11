@@ -17,6 +17,7 @@ import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.math.roundToInt
 
 class Alerta : AppCompatActivity() {
@@ -25,6 +26,7 @@ class Alerta : AppCompatActivity() {
     var aguita = 0
     var movimiento = false
     var data: Boolean = false
+
     var lista = ArrayList<Porcentaje>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
