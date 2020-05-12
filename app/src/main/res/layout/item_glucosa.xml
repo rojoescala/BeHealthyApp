@@ -15,7 +15,7 @@
         android:id="@+id/progressglucosa"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="190dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
         android:progressDrawable="@drawable/pbarglucosa"
         android:padding="1dp"
