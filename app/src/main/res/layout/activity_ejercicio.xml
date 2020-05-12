@@ -83,7 +83,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_marginLeft="50dp"
+
+            android:layout_marginHorizontal="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/letra_rutina_numero"
@@ -95,21 +96,21 @@
             android:layout_height="match_parent"
             android:gravity="center">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/rutina1"
-                android:gravity="center"
+                android:gravity="left"
                 android:textColor="@color/blanco"
                 android:textSize="@dimen/letra_descripcion_rutina"></TextView>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_marginHorizontal="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_marginLeft="50dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/letra_rutina_numero"
@@ -121,21 +122,21 @@
             android:layout_height="match_parent"
             android:gravity="center">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/rutina2"
-                android:gravity="center"
+                android:gravity="left"
                 android:textColor="@color/blanco"
                 android:textSize="@dimen/letra_descripcion_rutina"></TextView>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_marginHorizontal="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_marginLeft="50dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/letra_rutina_numero"
@@ -147,21 +148,21 @@
             android:layout_height="match_parent"
             android:gravity="center">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/rutina3"
-                android:gravity="center"
+                android:gravity="left"
                 android:textColor="@color/blanco"
                 android:textSize="@dimen/letra_descripcion_rutina"></TextView>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_marginHorizontal="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_marginLeft="50dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/letra_rutina_numero"
@@ -173,10 +174,10 @@
             android:layout_height="match_parent"
             android:gravity="center">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/rutina4"
-                android:gravity="center"
+                android:gravity="left"
                 android:textColor="@color/blanco"
                 android:textSize="@dimen/letra_descripcion_rutina"></TextView>
         </LinearLayout>

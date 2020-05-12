@@ -15,6 +15,7 @@ import escalante.roberto.behealthy.utilies.JSONFileMedicina
 import escalante.roberto.behealthy.utilies.ReminderBroadcaster
 import escalante.roberto.behealthy.utilies.medicinas
 import kotlinx.android.synthetic.main.activity_agregar_medicamente.*
+import kotlinx.android.synthetic.main.item_medicamento.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -40,44 +41,52 @@ class AgregarMedicamente : AppCompatActivity() {
 
 
         agregarbutton.setOnClickListener{
-            var estado = false
+            var estado: Boolean
 
-                var nombreMedicamento= nombre.text.toString()
+            var nombreMedicamento= nombre.text.toString()
+            var horaMedicamento = hora.text.toString()
 
-            if (nombreMedicamento == ""){
-                nombre.setError("Ingrese un nombre")
-            }
-            else{
-                estado = true
-            }
 
-                var horaMedicamento = hora.text.toString()
+
                 var dias: String = ""
 
                 if (checkLunes.isChecked)
-                    dias = "Lunes, "
+                    dias = "Lunes "
                 if(checkMartes.isChecked)
-                    dias = dias+"Martes, "
+                    dias = dias+"Martes "
                 if (checkMiercoles.isChecked)
-                    dias = dias+"Miercoles, "
+                    dias = dias+"Miercoles "
                 if (checkJueves.isChecked)
-                    dias = dias+"Jueves, "
+                    dias = dias+"Jueves "
                 if (checkViernes.isChecked)
-                    dias = dias+"Viernes, "
+                    dias = dias+"Viernes "
                 if (checkSabado.isChecked)
-                    dias = dias+"Sabado, "
+                    dias = dias+"Sabado "
                 if (checkDomingo.isChecked)
                     dias = dias+"Domingo"
 
 
-                var medi = medicinas(
+
+            estado = validarNombre(nombreMedicamento)
+            estado = validarHoras(horaMedicamento)
+
+            var medi = medicinas(
                     nombreMedicamento,
                     dias,
                     horaMedicamento
                 )
 
+            if (estado == true){
 
-            var intent = Intent(this,  Medicamentos::class.java)
+                var intent = Intent(this,  Medicamentos::class.java)
+                startActivity(intent)
+                lista.add(medi)
+                guardar()
+
+            }
+
+
+
 /*
 
 
@@ -97,11 +106,6 @@ class AgregarMedicamente : AppCompatActivity() {
                 startActivity(intent)
             }
             */
-            startActivity(intent)
-                lista.add(medi)
-                guardar()
-
-
 
         }
 
@@ -180,5 +184,25 @@ class AgregarMedicamente : AppCompatActivity() {
     }
 
 
+    fun validarNombre (name: String): Boolean {
+        var estado: Boolean
+        if (name == "") {
+            nombre.setError("Ingrese un nombre")
+            estado = false
+        } else {
+            estado = true
+        }
+        return estado
+    }
 
+    fun validarHoras (name: String): Boolean {
+        var estado: Boolean
+        if (name == "") {
+            hora.setError("Ingrese una hora")
+            estado = false
+        } else {
+            estado = true
+        }
+        return estado
+    }
 }
