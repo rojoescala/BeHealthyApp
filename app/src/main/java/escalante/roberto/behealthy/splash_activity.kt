@@ -7,9 +7,8 @@ import android.os.Handler
 import android.util.Log
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_menu.*
-import kotlinx.android.synthetic.main.activity_splash_activity.*
+import escalante.roberto.behealthy.utilies.Comidas
+import escalante.roberto.behealthy.utilies.JSONFileDieta
 import org.json.JSONArray
 import org.json.JSONObject
 import java.util.ArrayList
@@ -26,17 +25,47 @@ class splash_activity : AppCompatActivity() {
 
         jsonFile = JSONFileDieta()
         lista.clear()
-        lista.add(Comidas("DESAYUNO", resources.getString(R.string.desayuno_2),false))
-        lista.add(Comidas("COMIDA", resources.getString(R.string.comida_2),false))
-        lista.add(Comidas("MERIENDA", resources.getString(R.string.merienda_2),false))
-        lista.add(Comidas("CENA", resources.getString(R.string.cena_2),false))
-        lista.add(Comidas("RECENA", resources.getString(R.string.recena_2),false))
+        lista.add(
+            Comidas(
+                "DESAYUNO",
+                resources.getString(R.string.desayuno_2),
+                false
+            )
+        )
+        lista.add(
+            Comidas(
+                "COMIDA",
+                resources.getString(R.string.comida_2),
+                false
+            )
+        )
+        lista.add(
+            Comidas(
+                "MERIENDA",
+                resources.getString(R.string.merienda_2),
+                false
+            )
+        )
+        lista.add(
+            Comidas(
+                "CENA",
+                resources.getString(R.string.cena_2),
+                false
+            )
+        )
+        lista.add(
+            Comidas(
+                "RECENA",
+                resources.getString(R.string.recena_2),
+                false
+            )
+        )
 
         guardar()
         Handler().postDelayed({
             startActivity(Intent(this,Sign_in::class.java))
             finish()
-        },3000)
+        },1000)
     }
 
 

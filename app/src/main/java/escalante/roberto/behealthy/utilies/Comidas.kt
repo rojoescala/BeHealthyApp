@@ -1,3 +1,3 @@
-package escalante.roberto.behealthy
+package escalante.roberto.behealthy.utilies
 
 data class Comidas(var comida: String, var descripcion: String, var estado: Boolean)

@@ -1,12 +1,12 @@
-package escalante.roberto.behealthy
+package escalante.roberto.behealthy.utilies
 
 import android.content.Context
 import android.util.Log
 import java.io.IOException
 
-class JSONFileMedicina{
+class JSONFileGlucosa{
 
-    val medicinas = "data2.json"
+    val glucosas = "data4.json"
 
     constructor(){
 
@@ -18,7 +18,7 @@ class JSONFileMedicina{
 
         try {
 
-            context.openFileOutput(medicinas, Context.MODE_PRIVATE).use {
+            context.openFileOutput(glucosas, Context.MODE_PRIVATE).use {
                 it.write((json.toByteArray()))
             }
         }catch (e: IOException){
@@ -31,7 +31,7 @@ class JSONFileMedicina{
     fun getData(context: Context): String{
 
         try {
-            return context.openFileInput(medicinas).bufferedReader().readLine()
+            return context.openFileInput(glucosas).bufferedReader().readLine()
         }
         catch (e: IOException){
             Log.e("OBTENER","Error in fetching data: " + e.localizedMessage)

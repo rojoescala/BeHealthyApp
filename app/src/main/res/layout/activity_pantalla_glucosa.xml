@@ -36,32 +36,26 @@
 
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Azúcar en mejora"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:textColor="@color/gris"/>
-
-
 
     <TextView
+        android:id="@+id/textoDia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Promedio de glucosa: 0"
-        android:textSize="20dp"
-        android:textStyle="bold"
         android:layout_gravity="center"
-        android:textColor="@color/gris"/>
+        android:textAllCaps="true"
+        android:text="Lunes"
+        android:textColor="@color/blanco"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"
+        />
+
+
     <EditText
         android:id="@+id/glucosa_text"
         android:background="@drawable/round_edittext"
-        android:hint="Glucosa"
-        android:layout_marginTop="10dp"
+        android:hint="Nivel de Glucosa"
+        android:layout_marginTop="20dp"
+        android:inputType="numberDecimal"
         android:layout_width="250dp"
         android:layout_height="44dp"
         android:alpha="0.6"
@@ -70,6 +64,7 @@
         android:layout_gravity="center"/>
 
     <Button
+        android:id="@+id/btn_guardarGlucosa"
         android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,6 +72,11 @@
         android:layout_gravity="center"
         android:background="@drawable/button_ejercicio"
         ></Button>
+    <ListView
+        android:id="@+id/lista_Glocusa"
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"></ListView>
 
 
 

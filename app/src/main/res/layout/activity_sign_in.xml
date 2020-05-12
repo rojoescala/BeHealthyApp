@@ -17,35 +17,26 @@
         android:src="@drawable/logo"
         />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
 
 
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+<Button
+    android:id="@+id/btn_signin"
+    android:layout_gravity="center"
+    android:text="Sign In"
+    android:textSize="18dp"
+    android:background="@drawable/round_button"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content">
+</Button>
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
             android:layout_width="250dp"
-            android:layout_margin="44dp"
+            android:layout_margin="20dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/round_button"
             android:layout_gravity="center"
             android:layout_height="wrap_content" />
-    </LinearLayout>
-</LinearLayout>
-    </ScrollView>
+
 </LinearLayout>

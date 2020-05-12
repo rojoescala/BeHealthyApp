@@ -20,7 +20,9 @@ import java.util.*
 
 import android.widget.*
 import androidx.core.view.get
+import escalante.roberto.behealthy.utilies.Comidas
 import escalante.roberto.behealthy.utilies.JSONFile
+import escalante.roberto.behealthy.utilies.JSONFileDieta
 import escalante.roberto.behealthy.utilies.Porcentaje
 import org.json.JSONObject
 import kotlin.collections.ArrayList
@@ -78,7 +80,11 @@ class Dieta : AppCompatActivity(){
                 if (listaDieta[0].estado == false) {
 
                     lista_Dieta[0].palomita.setBackgroundResource(R.drawable.palomita)
-                    var comidita = Comidas(listaDieta[0].comida, listaDieta[0].descripcion, true)
+                    var comidita = Comidas(
+                        listaDieta[0].comida,
+                        listaDieta[0].descripcion,
+                        true
+                    )
                     listaDieta.set(0, comidita)
                     guardarDieta()
                     comida++
@@ -92,7 +98,11 @@ class Dieta : AppCompatActivity(){
 
                 if (listaDieta[1].estado == false) {
                     lista_Dieta[1].palomita.setBackgroundResource(R.drawable.palomita)
-                    var comidita = Comidas(listaDieta[1].comida, listaDieta[1].descripcion, true)
+                    var comidita = Comidas(
+                        listaDieta[1].comida,
+                        listaDieta[1].descripcion,
+                        true
+                    )
                     listaDieta.set(1, comidita)
                     guardarDieta()
                     comida++
@@ -105,7 +115,11 @@ class Dieta : AppCompatActivity(){
 
                 if (listaDieta[2].estado == false) {
                     lista_Dieta[2].palomita.setBackgroundResource(R.drawable.palomita)
-                    var comidita = Comidas(listaDieta[2].comida, listaDieta[2].descripcion, true)
+                    var comidita = Comidas(
+                        listaDieta[2].comida,
+                        listaDieta[2].descripcion,
+                        true
+                    )
                     listaDieta.set(2, comidita)
                     guardarDieta()
                     comida++
@@ -118,7 +132,11 @@ class Dieta : AppCompatActivity(){
 
                 if (listaDieta[3].estado == false) {
                     lista_Dieta[3].palomita.setBackgroundResource(R.drawable.palomita)
-                    var comidita = Comidas(listaDieta[3].comida, listaDieta[3].descripcion, true)
+                    var comidita = Comidas(
+                        listaDieta[3].comida,
+                        listaDieta[3].descripcion,
+                        true
+                    )
                     listaDieta.set(3, comidita)
                     guardarDieta()
                     comida++
@@ -131,7 +149,11 @@ class Dieta : AppCompatActivity(){
 
                 if (listaDieta[4].estado == false) {
                     lista_Dieta[4].palomita.setBackgroundResource(R.drawable.palomita)
-                    var comidita = Comidas(listaDieta[4].comida, listaDieta[4].descripcion, true)
+                    var comidita = Comidas(
+                        listaDieta[4].comida,
+                        listaDieta[4].descripcion,
+                        true
+                    )
                     listaDieta.set(4, comidita)
                     guardarDieta()
                     comida++

@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
+import escalante.roberto.behealthy.utilies.JSONFileMedicina
+import escalante.roberto.behealthy.utilies.medicinas
 import kotlinx.android.synthetic.main.activity_medicamentos.*
 import kotlinx.android.synthetic.main.item_medicamento.view.*
 import org.json.JSONArray

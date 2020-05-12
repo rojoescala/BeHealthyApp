@@ -10,16 +10,14 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
-import android.util.Log
 import android.widget.Toast
-import escalante.roberto.behealthy.utilies.JSONFile
+import escalante.roberto.behealthy.utilies.JSONFileMedicina
 import escalante.roberto.behealthy.utilies.ReminderBroadcaster
+import escalante.roberto.behealthy.utilies.medicinas
 import kotlinx.android.synthetic.main.activity_agregar_medicamente.*
-import kotlinx.android.synthetic.main.activity_menu.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import escalante.roberto.behealthy.Medicamentos as Medicamentos
 
 class AgregarMedicamente : AppCompatActivity() {
 
@@ -36,50 +34,75 @@ class AgregarMedicamente : AppCompatActivity() {
 
         jsonFile = JSONFileMedicina()
         fetchingData()
-        var intent = Intent(this, Medicamentos::class.java)
+        //var intent = Intent(this, Medicamentos::class.java)
 
 
 
 
         agregarbutton.setOnClickListener{
+            var estado = false
+
                 var nombreMedicamento= nombre.text.toString()
+
+            if (nombreMedicamento == ""){
+                nombre.setError("Ingrese un nombre")
+            }
+            else{
+                estado = true
+            }
+
                 var horaMedicamento = hora.text.toString()
                 var dias: String = ""
 
                 if (checkLunes.isChecked)
                     dias = "Lunes, "
                 if(checkMartes.isChecked)
-                    dias = dias+"Martes"
+                    dias = dias+"Martes, "
                 if (checkMiercoles.isChecked)
-                    dias = dias+"Miercoles"
+                    dias = dias+"Miercoles, "
                 if (checkJueves.isChecked)
-                    dias = dias+"Jueves"
+                    dias = dias+"Jueves, "
                 if (checkViernes.isChecked)
-                    dias = dias+"Viernes"
+                    dias = dias+"Viernes, "
                 if (checkSabado.isChecked)
-                    dias = dias+"Sabado"
+                    dias = dias+"Sabado, "
                 if (checkDomingo.isChecked)
-                    dias = dias+"Domingo,"
+                    dias = dias+"Domingo"
 
 
-                var medi = medicinas (nombreMedicamento, dias, horaMedicamento)
+                var medi = medicinas(
+                    nombreMedicamento,
+                    dias,
+                    horaMedicamento
+                )
 
-                lista.add(medi)
+
+            var intent = Intent(this,  Medicamentos::class.java)
+/*
 
 
-
-
-                guardar()
-                val intent=Intent(this, ReminderBroadcaster::class.java)
+            if (lista.isEmpty()){
+                intent=Intent(this, ReminderBroadcaster::class.java)
                 var pendingIntent:PendingIntent= PendingIntent.getBroadcast(this,0,intent,0)
 
                 var alarmManager:AlarmManager= getSystemService(Context.ALARM_SERVICE) as AlarmManager
                 var timeAtButtonClick= SystemClock.elapsedRealtime()
                 var hour=AlarmManager.INTERVAL_HALF_DAY
 
-            alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,timeAtButtonClick+hour,hour,pendingIntent)
-
+                alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,timeAtButtonClick+hour,hour,pendingIntent)
                 startActivity(intent)
+            }
+            else
+            {
+                startActivity(intent)
+            }
+            */
+            startActivity(intent)
+                lista.add(medi)
+                guardar()
+
+
+
         }
 
     }
