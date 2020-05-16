@@ -47,7 +47,7 @@ class Menu : AppCompatActivity() {
         fetchingData()
 
         val anotherCurDate = Date()
-        val formatter = SimpleDateFormat("dd/mm/yyyy hh:mm a")
+        val formatter = SimpleDateFormat("dd/mm/yyyy")
         var fecha = formatter.format(anotherCurDate)
 
 
