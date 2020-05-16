@@ -26,6 +26,14 @@ import escalante.roberto.behealthy.utilies.JSONFileDieta
 import escalante.roberto.behealthy.utilies.Porcentaje
 import org.json.JSONObject
 import kotlin.collections.ArrayList
+import androidx.core.content.ContextCompat.startActivity
+import android.app.Activity
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 
 class Dieta : AppCompatActivity(){
@@ -37,7 +45,6 @@ class Dieta : AppCompatActivity(){
     var listaDieta = ArrayList<Comidas>()
     var jsonFilePorcentajae: JSONFile? = null
     var listaPorcentaje = ArrayList<Porcentaje>()
-    var dataPorcentaje: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dieta)
@@ -63,22 +70,37 @@ class Dieta : AppCompatActivity(){
 
 
 
+
+
+
+
         jsonFilePorcentajae = JSONFile()
         fetchingDataPorcentaje()
 
+
+
+        if (comida==0){
+            for (i in 0..listaDieta.size-1){
+                var nombre = listaDieta[i].comida
+               var descripcion = listaDieta[i].descripcion
+                var estado = false
+                var comida = Comidas(nombre,descripcion,estado)
+                listaDieta.set(i,comida)
+            }
+            guardarDieta()
+        }
 
 
 
         var adaptador = AdaptorMedicamentos(this,listaDieta)
         lista_Dieta.adapter =adaptador
 
+
+
+
         lista_Dieta.setOnItemClickListener { parent, view, position, id ->
-
             if (position == 0) {
-
-
                 if (listaDieta[0].estado == false) {
-
                     lista_Dieta[0].palomita.setBackgroundResource(R.drawable.palomita)
                     var comidita = Comidas(
                         listaDieta[0].comida,
@@ -88,14 +110,11 @@ class Dieta : AppCompatActivity(){
                     listaDieta.set(0, comidita)
                     guardarDieta()
                     comida++
-
                 }
-
-
             }
+
+
             if (position == 1) {
-
-
                 if (listaDieta[1].estado == false) {
                     lista_Dieta[1].palomita.setBackgroundResource(R.drawable.palomita)
                     var comidita = Comidas(
@@ -107,12 +126,10 @@ class Dieta : AppCompatActivity(){
                     guardarDieta()
                     comida++
                 }
-
-
             }
+
+
             if (position == 2) {
-
-
                 if (listaDieta[2].estado == false) {
                     lista_Dieta[2].palomita.setBackgroundResource(R.drawable.palomita)
                     var comidita = Comidas(
@@ -124,12 +141,10 @@ class Dieta : AppCompatActivity(){
                     guardarDieta()
                     comida++
                 }
-
-
             }
+
+
             if (position == 3) {
-
-
                 if (listaDieta[3].estado == false) {
                     lista_Dieta[3].palomita.setBackgroundResource(R.drawable.palomita)
                     var comidita = Comidas(
@@ -141,12 +156,10 @@ class Dieta : AppCompatActivity(){
                     guardarDieta()
                     comida++
                 }
-
-
             }
+
+
             if (position == 4) {
-
-
                 if (listaDieta[4].estado == false) {
                     lista_Dieta[4].palomita.setBackgroundResource(R.drawable.palomita)
                     var comidita = Comidas(
@@ -158,8 +171,6 @@ class Dieta : AppCompatActivity(){
                     guardarDieta()
                     comida++
                 }
-
-
             }
 
 
@@ -260,8 +271,6 @@ class Dieta : AppCompatActivity(){
         }
         jsonFile?.saveData(this, jsonArray.toString())
     }
-
-
 
 
 

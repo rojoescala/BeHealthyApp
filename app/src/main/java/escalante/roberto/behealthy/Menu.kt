@@ -10,16 +10,15 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import escalante.roberto.behealthy.utilies.CustomCircleDrawable
-import escalante.roberto.behealthy.utilies.JSONFile
-import escalante.roberto.behealthy.utilies.Porcentaje
+import escalante.roberto.behealthy.utilies.*
 import kotlinx.android.synthetic.main.activity_agregar_medicamente.*
 import kotlinx.android.synthetic.main.activity_ejercicio.*
 import kotlinx.android.synthetic.main.activity_menu.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.ArrayList
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class Menu : AppCompatActivity() {
@@ -29,9 +28,10 @@ class Menu : AppCompatActivity() {
     var movimiento = false
     var data: Boolean = false
     var lista = ArrayList<Porcentaje>()
-    var porcentaje: Porcentaje? =  null
-    var estado: Boolean = false
-    // var s: String = getIntent().getStringExtra()
+    var fechaJSON: String? = null
+    var listaFecha = ArrayList<Reinicio>()
+    var jsonFileReinicio: JSONFileReinicio? = null
+
 
 
 
@@ -39,6 +39,28 @@ class Menu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
+
+        jsonFileReinicio = JSONFileReinicio()
+        fetchingDataDia()
+
+        jsonFile = JSONFile()
+        fetchingData()
+
+        val anotherCurDate = Date()
+        val formatter = SimpleDateFormat("dd/mm/yyyy hh:mm a")
+        var fecha = formatter.format(anotherCurDate)
+
+
+        if(fecha != fechaJSON) {
+            listaFecha.add(Reinicio(fecha))
+            guardarFecha()
+            comida = 0
+            aguita = 0
+            movimiento = false
+            lista.add(Porcentaje(aguita,movimiento,comida,"sabado"))
+            guardar()
+
+        }
 
 
         // No se si es necesario hacer muchos itentos
@@ -58,9 +80,7 @@ class Menu : AppCompatActivity() {
         var botonEjercicio: LinearLayout = findViewById(R.id.btn_ejercicio) as LinearLayout
 
 
-        jsonFile = JSONFile()
 
-        fetchingData()
         if (!data){
             var porcentajes = ArrayList<Porcentaje>()
             val fondo = CustomCircleDrawable(this, porcentajes)
@@ -153,6 +173,23 @@ class Menu : AppCompatActivity() {
         return lista
     }
 
+    fun guardar(){
+        var jsonArray = JSONArray()
+        var o : Int = 0
+        for (i in lista){
+            Log.d("objetos", i.toString())
+            var j: JSONObject = JSONObject()
+            j.put("agua", i.agua)
+            j.put("ejercicio", i.ejericio)
+            j.put("dieta",i.dieta)
+            j.put("fecha",i.fecha)
+
+            jsonArray.put(o,j)
+        }
+        jsonFile?.saveData(this, jsonArray.toString())
+        Toast.makeText(this,"Datos guardados", Toast.LENGTH_SHORT).show()
+    }
+
 
 
     fun actualizarGrafica(){
@@ -181,9 +218,73 @@ class Menu : AppCompatActivity() {
         val fondo = CustomCircleDrawable(this,lista)
        graph.background = fondo
     }
+    fun guardarFecha(){var jsonArray = JSONArray()
+        var o : Int = 0
+        for (i in listaFecha){
+            Log.d("objetos", i.toString())
+            var j: JSONObject = JSONObject()
+            j.put("dia", i.dia)
+
+
+            jsonArray.put(o,j)
+            o++
+        }
+        jsonFileReinicio?.saveData(this, jsonArray.toString())
+    }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    fun fetchingDataDia(){
+        try {
+            var json : String = jsonFileReinicio?.getData(this) ?:""
+            if (json != ""){
+                this.data = true
+                var jsonArray : JSONArray = JSONArray(json)
+
+                this.listaFecha = parseJsonDia(jsonArray)
+                for (i in listaFecha){
+
+                    fechaJSON = i.dia
+                }
+            } else {
+                this.data = false
+            }
+        } catch (exception: JSONException){
+            exception.printStackTrace()
+        }
+    }
+
+
+    fun parseJsonDia(jsonArray: JSONArray): ArrayList<Reinicio>{
+        var lista = ArrayList<Reinicio>()
+
+        for (i in 0..jsonArray.length()){
+            try {
+                val dia = jsonArray.getJSONObject(i).getString("dia")
+                var reinicio = Reinicio (dia)
+                lista.add(reinicio)
+            } catch (exception: JSONException){
+                exception.printStackTrace()
+            }
+        }
+        return lista
+    }
 
 
 }
