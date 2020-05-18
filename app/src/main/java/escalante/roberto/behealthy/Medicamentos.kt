@@ -9,12 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
+import android.widget.Toast
 import escalante.roberto.behealthy.utilies.JSONFileMedicina
 import escalante.roberto.behealthy.utilies.medicinas
 import kotlinx.android.synthetic.main.activity_medicamentos.*
 import kotlinx.android.synthetic.main.item_medicamento.view.*
 import org.json.JSONArray
 import org.json.JSONException
+import org.json.JSONObject
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -25,8 +27,6 @@ class Medicamentos : AppCompatActivity() {
 
     var jsonFile: JSONFileMedicina? = null
     var name = ""
-    var day = ""
-    var time = ""
     var data : Boolean = false
     var listaMedicamentos = ArrayList<medicinas>()
 
@@ -44,7 +44,6 @@ class Medicamentos : AppCompatActivity() {
 
         jsonFile = JSONFileMedicina()
         fetchingData()
-
 
 
         var adaptador = AdaptorMedicamentos(this,listaMedicamentos)
@@ -71,8 +70,6 @@ class Medicamentos : AppCompatActivity() {
     fun fetchingData(){
         try {
              var json: String = jsonFile?.getData(this) ?:""
-            //var json : String = agregarme.getJSON()
-
             if (json != ""){
                 this.data = true
                 var jsonArray : JSONArray = JSONArray(json)
@@ -113,14 +110,16 @@ class Medicamentos : AppCompatActivity() {
         var medicinas = ArrayList<medicinas>()
 
 
-        constructor(contexto: Context, medicinas: ArrayList<medicinas>){
+        constructor(contexto: Context?, medicinas: ArrayList<medicinas>){
             this.contexto = contexto
             this.medicinas = medicinas
         }
+
+
+
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
 
-            
             var mie = medicinas[position]
             var inflator = LayoutInflater.from(contexto)
             var vista = inflator.inflate(R.layout.item_medicamento, null)
@@ -133,6 +132,11 @@ class Medicamentos : AppCompatActivity() {
             return vista
         }
 
+
+
+
+
+
         override fun getItem(position: Int): Any {
             return medicinas[position]
         }
@@ -144,6 +148,8 @@ class Medicamentos : AppCompatActivity() {
         override fun getCount(): Int {
             return medicinas.size
         }
+
+
 
     }
 

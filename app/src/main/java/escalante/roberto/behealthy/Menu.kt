@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import escalante.roberto.behealthy.utilies.*
 import kotlinx.android.synthetic.main.activity_agregar_medicamente.*
+import kotlinx.android.synthetic.main.activity_dieta.*
 import kotlinx.android.synthetic.main.activity_ejercicio.*
 import kotlinx.android.synthetic.main.activity_menu.*
 import org.json.JSONArray
@@ -43,11 +44,13 @@ class Menu : AppCompatActivity() {
         jsonFileReinicio = JSONFileReinicio()
         fetchingDataDia()
 
+
+
         jsonFile = JSONFile()
         fetchingData()
 
         val anotherCurDate = Date()
-        val formatter = SimpleDateFormat("dd/mm/yyyy")
+        val formatter = SimpleDateFormat("dd/MM/yyyy")
         var fecha = formatter.format(anotherCurDate)
 
 
@@ -231,24 +234,6 @@ class Menu : AppCompatActivity() {
         }
         jsonFileReinicio?.saveData(this, jsonArray.toString())
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     fun fetchingDataDia(){
         try {

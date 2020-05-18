@@ -146,18 +146,13 @@ class AgregarMedicamente : AppCompatActivity() {
 
 
     fun guardar(){
-
-
         var jsonArray = JSONArray()
         var o : Int = 0
         for(i in lista){
-
             var j: JSONObject = JSONObject()
             j.put("nombre", i.nombre)
             j.put("dias", i.dias)
             j.put("hora", i.hora)
-
-
             jsonArray.put(o, j)
             o++
 
